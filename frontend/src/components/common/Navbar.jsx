@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink  } from "react-router-dom";
 import { FaBars, FaFacebookF, FaInstagram, FaLinkedinIn, FaTimes, FaTwitter } from "react-icons/fa";
-import i18n from "i18next";
 import { useTranslation } from "react-i18next";
 
 

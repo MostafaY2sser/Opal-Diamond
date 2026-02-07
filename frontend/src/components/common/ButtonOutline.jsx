@@ -4,7 +4,7 @@ const ButtonOutline = ({ children, href = "#", className }) => {
   return (
     <>
       {/* ====== CSS Animation ====== */}
-      <style>{`
+      {/* <style>{`
         @keyframes shine {
           0% {
             background-position: 0% 50%;
@@ -32,7 +32,7 @@ const ButtonOutline = ({ children, href = "#", className }) => {
           background-size: 300% 300%;
           animation: shine 6s ease-out infinite;
         }
-      `}</style>
+      `}</style> */}
 
       <div className="button-bg rounded-lg p-[2px] hover:scale-105 transition-transform duration-300 active:scale-100">
         <a

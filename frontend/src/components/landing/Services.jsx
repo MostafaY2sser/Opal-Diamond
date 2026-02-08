@@ -29,7 +29,7 @@ const ServicesSection = () => {
           data-aos="fade-up"
           className="text-xl md:text-4xl font-extrabold text-primary mb-4"
         >
-          خدماتنا <span className="text-primary">التجميلية والجلدية</span>
+          خدماتنا <span className="text-primary">في الليزر والجلدية والتجميل الطبي</span>
         </h2>
 
         <p
@@ -37,8 +37,8 @@ const ServicesSection = () => {
           data-aos-delay="100"
           className="text-text max-w-2xl mx-auto mb-12 text-base sm:text-lg"
         >
-          نقدم مجموعة متكاملة من خدمات التجميل والعناية بالبشرة باستخدام أحدث الأجهزة
-          وبإشراف نخبة من أطباء الجلدية لضمان أفضل النتائج لبشرتك وجمالك.
+          نوفر باقة متكاملة من جلسات الليزر، علاجات الجلدية، والإجراءات التجميلية غير الجراحية
+          باستخدام أحدث التقنيات الطبية وتحت إشراف أطباء متخصصين لتحقيق نتائج آمنة وطبيعية تدوم.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">

@@ -69,6 +69,16 @@ export default function DashboardLayout() {
             >
               {t('doctors')}
             </NavLink>
+
+            <NavLink
+              to="/dashboard/devices"
+              onClick={() => setSidebarOpen(false)}
+              className={({ isActive }) =>
+                `block p-2 rounded hover:bg-gray-300 hover:text-primary ${isActive ? 'bg-primary text-text' : ''}`
+              }
+            >
+              {t('devices')}
+            </NavLink>
           </nav>
         </aside>
 
@@ -109,6 +119,16 @@ export default function DashboardLayout() {
               }
             >
               {t('doctors')}
+            </NavLink>
+
+            <NavLink
+              to="/dashboard/devices"
+              onClick={() => setSidebarOpen(false)}
+              className={({ isActive }) =>
+                `block p-2 rounded hover:bg-gray-300 hover:text-primary ${isActive ? 'bg-primary text-text' : ''}`
+              }
+            >
+              {t('devices')}
             </NavLink>
           </nav>
         </aside>

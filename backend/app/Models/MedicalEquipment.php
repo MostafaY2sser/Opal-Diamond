@@ -9,17 +9,23 @@ class MedicalEquipment extends Model
 {
     use HasFactory;
 
-    protected $table = 'medical_equipments';
+    protected $table = 'medical_equipments'; // اسم الجدول
 
     protected $fillable = [
-        'name',
-        'description',
-        'features',
+        'name_ar',
+        'name_en',
+        'description_ar',
+        'description_en',
+        'features_ar',
+        'features_en',
         'image',
-        'status',
+        'images',
+        'status'
     ];
 
     protected $casts = [
-        'features' => 'array',
+        'features_ar' => 'array',
+        'features_en' => 'array',
+        'images' => 'array',
     ];
 }

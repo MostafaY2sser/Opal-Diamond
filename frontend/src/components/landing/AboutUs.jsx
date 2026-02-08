@@ -13,30 +13,31 @@ const AboutUs = () => {
           </span>
 
           <h2 className="text-xl md:text-3xl font-extrabold text-text mb-6 leading-tight text-center sm:text-start">
-            مركز تجميل وجلدية متكامل
-            <span className="block text-primary mt-2">
-              بجودة عالمية ونتائج آمنة
+            مركز متخصص في الليزر والجلدية والتجميل الطبي
+            <span className="block text-xl text-primary mt-2 sm:mt-4">
+              رعاية متكاملة ونتائج آمنة بمعايير طبية
             </span>
           </h2>
 
           <p className="text-primary text-sm sm:text-base leading-relaxed mb-8">
-            نحن مركز تجميل وجلدية متخصص نقدم أحدث علاجات البشرة والتجميل باستخدام أجهزة متطورة
-            وبإشراف نخبة من الأطباء المتخصصين لضمان أفضل النتائج لبشرتك وجمالك.
+            نقدم خدمات متقدمة في علاج مشاكل البشرة والشعر، جلسات الليزر،
+            والتجميل غير الجراحي باستخدام أحدث الأجهزة الطبية وبإشراف نخبة من
+            أطباء الجلدية المتخصصين، لنمنحك نتائج طبيعية وآمنة تعزز ثقتك بنفسك.
           </p>
 
           {/* Features */}
           <ul className="space-y-4 mb-10">
             <li className="flex items-center justify-center sm:justify-normal gap-3">
               <span className="text-primary text-xl">✔</span>
-              <span>أطباء جلدية وتجميل معتمدون بخبرة عالية</span>
+              <span>أطباء جلدية وتجميل معتمدون بخبرة طبية عالية</span>
             </li>
             <li className="flex items-center justify-center sm:justify-normal gap-3">
               <span className="text-primary text-xl">✔</span>
-              <span>أحدث أجهزة التجميل والعناية بالبشرة</span>
+              <span>أحدث أجهزة الليزر لإزالة الشعر وعلاج التصبغات والندبات</span>
             </li>
             <li className="flex items-center justify-center sm:justify-normal gap-3">
               <span className="text-primary text-xl">✔</span>
-              <span>علاجات آمنة ومخصصة لكل نوع بشرة</span>
+              <span>خطط علاج مخصصة لكل حالة مع متابعة دقيقة</span>
             </li>
           </ul>
 
@@ -51,7 +52,7 @@ const AboutUs = () => {
         <div className="relative">
           <img
             src="/HeroSection.jpg"
-            alt="About Beauty & Dermatology Center"
+            alt="Laser, Dermatology & Aesthetic Center"
             className="rounded-xl shadow-lg object-cover w-full h-[300px] md:h-[420px]"
             data-aos="fade-right"
           />
@@ -59,14 +60,13 @@ const AboutUs = () => {
           {/* Glass Card */}
           <div className="absolute bottom-2 md:bottom-6 right-2 md:right-6 bg-white/20 backdrop-blur-xl rounded-md md:rounded-2xl p-3 md:p-6 border border-white/30 shadow-lg">
             <p className="text-primary font-semibold text-sm md:text-lg">
-              أكثر من 10 سنوات خبرة   
+              أكثر من 10 سنوات خبرة في الجلدية والليزر
             </p>
           </div>
         </div>
 
       </div>
     </section>
-
   );
 };
 

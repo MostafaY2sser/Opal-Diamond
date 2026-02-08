@@ -45,20 +45,22 @@ const ContactSection = () => {
           <div className="space-y-6  text-text-light  sm:w-[35%]" data-aos="zoom-in">
             <div className="flex flex-col justify-center items-center sm:items-start gap-2">
               <h3 className="text-xl font-semibold mb-2 text-primary">الموقع</h3>
-              <p className="flex sm:items-center  text-primary sm:gap-2">
-                <FaMapMarkerAlt className="text-primary" /> حي المنتزه، المنطقة الشرقية، المملكة العربية السعودية
+              <p className="">
+                <a href="https://share.google/wgXwzqDvhuFcmS1To" className="flex   text-primary text-center sm:text-start sm:gap-2">
+                  <FaMapMarkerAlt className="text-primary" /> حي المنتزه، سيهات 32452، المنطقة الشرقية، المملكة العربية السعودية
+                </a>
               </p>
             </div>
             <div className="flex flex-col justify-center items-center sm:items-start gap-2" data-aos-delay="100">
               <h3 className="text-xl font-semibold mb-2 text-primary">الهاتف</h3>
               <p className="flex items-center text-primary gap-2">
-                <FaPhoneAlt className="text-primary" /> 053 632 2322
+                <FaPhoneAlt className="text-primary" />053 632 2322
               </p>
             </div>
             <div className="flex flex-col justify-center items-center sm:items-start gap-2" data-aos-delay="200">
               <h3 className="text-xl font-semibold mb-2 text-primary">البريد الإلكتروني</h3>
               <p className="flex items-center text-primary gap-2">
-                <FaEnvelope className="text-primary" /> info@opaldiamondclinic.sa
+                <FaEnvelope className="text-primary" /> contact@opaldiamondclinic.com
               </p>
             </div>
           </div>

@@ -9,7 +9,7 @@ const ServiceCard = ({ icon, title, description, delay = 0 }) => {
     >
       <div className="mb-4">{icon}</div>
       <h3 className="text-lg font-semibold text-primary mb-2">{title}</h3>
-      <p className="text-gray-600 text-sm">{description}</p>
+      <p className="text-primary text-sm">{description}</p>
     </div>
   );
 };

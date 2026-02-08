@@ -17,6 +17,10 @@ import AddDoctor from "../pages/Dashboard/Doctors/AddDoctor";
 import { Doctors } from "../pages/Landing/Doctors";
 import DoctorDetails from "../pages/Dashboard/Doctors/DoctorDetails";
 import EditDoctor from "../pages/Dashboard/Doctors/EditDoctor";
+import DevicesList from "../pages/Dashboard/Devices/DevicesList";
+import { DevicesDetails } from "../pages/Dashboard/Devices/DevicesDetails";
+import { AddDevices } from "../pages/Dashboard/Devices/AddDevices";
+import EditDevices from "../pages/Dashboard/Devices/EditDevices";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +65,22 @@ const router = createBrowserRouter([
       {
         path: "add-doctor",
         element: <AddDoctor /> 
+      },
+      {
+        path: "devices",
+        element: <DevicesList /> 
+      },
+      {
+        path: "devices/:id",
+        element: <DevicesDetails /> 
+      },
+      {
+        path: "add-devices",
+        element: <AddDevices /> 
+      },
+      {
+        path: "edit-devices/:id",
+        element: <EditDevices /> 
       },
     ],
   },

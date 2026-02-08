@@ -28,10 +28,10 @@ const FAQSection = () => {
             >
               <button
                 onClick={() => toggleFaq(faq.id)}
-                className="w-full px-2 md:px-6 py-2 md:py-4 flex justify-between items-center font-semibold text-text"
+                className="w-full px-3 md:px-6 py-3 md:py-4 flex justify-between items-center font-semibold text-text"
               >
-                <span className="text-primary text-sm sm:text-base">{faq.question}</span>
-                <span className="text-primary">
+                <span className="text-primary text-start text-sm sm:text-base">{faq.question}</span>
+                <span className="text-primary text-2xl">
                   {openId === faq.id ? "-" : "+"}
                 </span>
               </button>

@@ -1,11 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { testimonials } from "../../data/testimonials";
 
-
 const TestimonialsSection = () => {
   const [current, setCurrent] = useState(0);
-  const visibleCards = 3; 
+  const [visibleCards, setVisibleCards] = useState(3);
+
+  // تحديث عدد البطاقات المرئية حسب حجم الشاشة
+  useEffect(() => {
+    const updateVisibleCards = () => {
+      if (window.innerWidth < 640) setVisibleCards(1); // sm
+      else if (window.innerWidth < 1024) setVisibleCards(2); // md
+      else setVisibleCards(3); // lg+
+    };
+    updateVisibleCards();
+    window.addEventListener("resize", updateVisibleCards);
+    return () => window.removeEventListener("resize", updateVisibleCards);
+  }, []);
+
   const maxIndex = testimonials.length - visibleCards;
 
   const handlePrev = () => {
@@ -23,7 +35,7 @@ const TestimonialsSection = () => {
           آراء العملاء
         </span>
 
-        <h2 className="text-xl md:text-3xl font-extrabold text-primary md-8 lg:mb-14" data-aos="fade-up">
+        <h2 className="text-xl md:text-3xl font-extrabold text-primary mb-8 lg:mb-14" data-aos="fade-up">
           ثقة عملائنا هي سر نجاحنا
         </h2>
 
@@ -38,20 +50,15 @@ const TestimonialsSection = () => {
             {testimonials.map((item) => (
               <div
                 key={item.id}
-                className="px-4 w-full sm:w-1/2 lg:w-[33.3333%] flex-shrink-0 py-2"
+                className={`px-4 flex-shrink-0 py-2`}
+                style={{ width: `${100 / visibleCards}%` }}
               >
                 <div
                   className="h-full backdrop-blur-xl border border-white/30 rounded-xl shadow-md p-6"
                   data-aos="fade-up"
                 >
                   <div className="flex flex-col items-center mb-6">
-                    {/* <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-16 h-16 rounded-full object-cover border-2 border-primary mb-3"
-                    /> */}
                     <h4 className="font-semibold text-primary">{item.name}</h4>
-                    {/* <span className="text-sm text-text-light">{item.role}</span> */}
                   </div>
                   <p className="text-text-light leading-relaxed">"{item.comment}"</p>
                 </div>

@@ -30,15 +30,15 @@ const DoctorProfile = () => {
             <img
               src={doctor.image}
               alt={doctor.name}
-              className="w-full md:w-1/2 rounded-2xl object-cover shadow-lg"
+              className="w-full md:w-1/2 h-96 rounded-2xl object-cover shadow-lg"
             />
 
             {/* Doctor Info */}
             <div className="md:w-2/3">
               <h2 className="text-2xl font-bold text-primary mb-4">نبذة عن الدكتور</h2>
-              <p className="text-primary mb-6">{doctor.name}</p>
-              <p className="text-primary mb-6">{doctor.specialty}</p>
-              <p className="text-primary mb-6">{doctor.description}</p>
+              <p className="text-primary sm:text-xl font-semibold mb-6">{doctor.name}</p>
+              <p className="text-primary sm:text-xl font-medium mb-6">{doctor.specialty}</p>
+              <p className="text-primary mb-6 font-medium" style={{ lineHeight:"34px" }}>{doctor.description}</p>
             </div>
           </div>
 

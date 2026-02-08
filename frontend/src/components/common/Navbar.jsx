@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink  } from "react-router-dom";
-import { FaBars, FaFacebookF, FaInstagram, FaLinkedinIn, FaTimes, FaTwitter } from "react-icons/fa";
+import { FaBars, FaFacebookF, FaInstagram, FaLinkedinIn, FaSnapchat, FaTiktok, FaTimes, FaTwitter } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
 
@@ -127,17 +127,17 @@ const Navbar = () => {
 
           {/* Social Media Links */}
           <div className="hidden md:flex justify-center md:justify-start gap-4 ">
-            <a href="#" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
+            <a href="https://www.facebook.com/share/1ArpPY2DFL/" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
               <FaFacebookF />
             </a>
-            <a href="#" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
-              <FaTwitter />
+            <a href="https://www.tiktok.com/@opall.diamond?_r=1&_t=zs-93irjgquwfw" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
+              <FaTiktok />
             </a>
-            <a href="#" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
+            <a href="https://www.instagram.com/opall.diamond?igsh=bzRlbG02enVvaWdk" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
               <FaInstagram />
             </a>
-            <a href="#" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
-              <FaLinkedinIn />
+            <a href="https://www.snapchat.com/add/opall.diamond?share_id=wIyqzW9TZhc&locale=ar-AE" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
+              <FaSnapchat/>
             </a>
           </div>
         </div>
@@ -213,17 +213,17 @@ const Navbar = () => {
           </ul>
           {/* Social Media Links */}
           <div className="md:hidden flex justify-center md:justify-start gap-4 mt-10">
-            <a href="#" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
+            <a href="https://www.facebook.com/share/1ArpPY2DFL/" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
               <FaFacebookF />
             </a>
-            <a href="#" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
-              <FaTwitter />
+            <a href="https://www.tiktok.com/@opall.diamond?_r=1&_t=zs-93irjgquwfw" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
+              <FaTiktok />
             </a>
-            <a href="#" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
+            <a href="https://www.instagram.com/opall.diamond?igsh=bzRlbG02enVvaWdk" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
               <FaInstagram />
             </a>
-            <a href="#" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
-              <FaLinkedinIn />
+            <a href="https://www.snapchat.com/add/opall.diamond?share_id=wIyqzW9TZhc&locale=ar-AE" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
+              <FaSnapchat/>
             </a>
           </div>
         </div>

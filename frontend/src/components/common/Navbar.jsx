@@ -32,8 +32,8 @@ const Navbar = () => {
         className={`p-2 sm:p-4 sticky top-0 z-50 transition-colors duration-200 ${
           scrolled
             ? "bg-white shadow-md"
-            // : "bg-white/10 backdrop-blur-md"
-            : "bg-primary/20 backdrop-blur-md"
+            // : "bg-primary/20 backdrop-blur-md"
+            : ""
         }`}
       >
 
@@ -150,7 +150,7 @@ const Navbar = () => {
           onClick={toggleMenu}
           aria-label="Toggle Menu"
         >
-          {isOpen ? <FaTimes className="text-primary" /> : <FaBars className="text-primary" />}
+          {isOpen ? <FaTimes className="text-primary" /> : <FaBars className={`${scrolled ? 'text-primary' : 'text-text'}`} />}
         </button>
 
         {/* Mobile Menu */}

@@ -9,7 +9,7 @@ const About = () => {
       <MainHero
         title="من نحن"
         description="نحن مركز متخصص في الليزر والجلدية والتجميل الطبي، ملتزمون بتقديم أفضل رعاية صحية وجمالية لكل عميل باستخدام أحدث الأجهزة الطبية."
-        bgImage="/HeroSection.jpg"
+        bgImage="/main_bg_hero.jpg"
       />
 
       {/* ===== Our Vision & Mission ===== */}

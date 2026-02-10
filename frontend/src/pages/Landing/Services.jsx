@@ -10,7 +10,7 @@ const Services = () => {
       <MainHero   
         title="خدماتنا"
         description="نقدم مجموعة شاملة من خدمات الليزر والجلدية والتجميل الطبي باستخدام أحدث الأجهزة لضمان أفضل النتائج لعملائنا."
-        bgImage="/HeroSection.jpg"
+        bgImage="/main_bg_hero.jpg"
       />
 
       {/* ===== How It Works Section ===== */}

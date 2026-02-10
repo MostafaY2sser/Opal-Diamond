@@ -12,7 +12,7 @@ const Devices = () => {
         title="الأجهزة الطبية"
         subtitle="معدات حديثة"
         description="نستخدم أحدث الأجهزة الطبية لضمان تشخيص وعلاج دقيق لكل مريض."
-        bgImage="/HeroSection.jpg"
+        bgImage="/main_bg_hero.jpg"
       />
 
       {/* Grid للأجهزة */}

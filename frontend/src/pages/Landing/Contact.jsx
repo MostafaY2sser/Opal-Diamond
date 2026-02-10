@@ -10,7 +10,7 @@ const Contact = () => {
       <MainHero
         title="تواصل معن"
         description="لأي استفسار أو حجز موعد يمكنك التواصل معنا مباشرة أو إرسال رسالة من خلال النموذج."
-        bgImage="/HeroSection.jpg"
+        bgImage="/main_bg_hero.jpg"
       />
 
       {/* ===== Middle Intro Section ===== */}

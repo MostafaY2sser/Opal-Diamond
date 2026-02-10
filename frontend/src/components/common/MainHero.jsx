@@ -3,7 +3,7 @@ import React from "react";
 const MainHero = ({ title, subtitle, description, bgImage }) => {
   return (
     <section
-      className="relative w-full min-h-[70vh] flex items-center justify-center text-center text-text mt-[-90px]"
+      className="relative w-full h-[50vh] sm:min-h-[70vh] flex items-center justify-center text-center text-text mt-[-90px]"
       style={{
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",

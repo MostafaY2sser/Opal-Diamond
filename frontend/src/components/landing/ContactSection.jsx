@@ -47,15 +47,15 @@ const ContactSection = () => {
               <h3 className="text-xl font-semibold mb-2 text-primary">الموقع</h3>
               <p className="">
                 <a href="https://share.google/wgXwzqDvhuFcmS1To" className="flex   text-primary text-center sm:text-start sm:gap-2">
-                  <FaMapMarkerAlt className="text-primary" /> حي المنتزه، سيهات 32452، المنطقة الشرقية، المملكة العربية السعودية
+                  <FaMapMarkerAlt className="text-primary" />المنطقه الشرقيه - الدمام - سيهات - حي المنتزه - شارع إبراهيم الشاطبي - عماره JFC الدور الرابع
                 </a>
               </p>
             </div>
             <div className="flex flex-col justify-center items-center sm:items-start gap-2" data-aos-delay="100">
               <h3 className="text-xl font-semibold mb-2 text-primary">الهاتف</h3>
-              <p className="flex items-center text-primary gap-2">
-                <FaPhoneAlt className="text-primary" />053 632 2322
-              </p>
+              <a href="tel:0536322322" className="flex items-center text-primary gap-2">
+                <FaPhoneAlt className="text-primary" /> 0536322322
+              </a>
             </div>
             <div className="flex flex-col justify-center items-center sm:items-start gap-2" data-aos-delay="200">
               <h3 className="text-xl font-semibold mb-2 text-primary">البريد الإلكتروني</h3>

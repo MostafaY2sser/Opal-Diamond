@@ -40,13 +40,13 @@ const Footer = () => {
         <div className="md:col-span-3 space-y-4">
           <h3 className={`text-xl font-semibold text-text mb-2  text-center ${ isRTL ? 'sm:text-right' : 'sm:text-left' }`}>تواصل معنا</h3>
           <p className="">
-            <a href="https://share.google/wgXwzqDvhuFcmS1To" className="flex items-center justify-center md:justify-start gap-2 text-text">
-              <FaMapMarkerAlt /> حي المنتزه، سيهات 32452، المنطقة الشرقية، المملكة العربية السعودية
+            <a href="https://share.google/wgXwzqDvhuFcmS1To" className="flex  justify-center md:justify-start gap-2 text-text">
+              <FaMapMarkerAlt /> المنطقه الشرقيه - الدمام - سيهات - حي المنتزه - شارع إبراهيم الشاطبي - عماره JFC الدور الرابع
             </a>
           </p>
-          <p className="flex items-center justify-center md:justify-start gap-2 text-text">
-            <FaPhoneAlt /> 053 632 2322
-          </p>
+          <a href="tel:0536322322" className="flex items-center justify-center md:justify-start gap-2 text-text">
+            <FaPhoneAlt /> 0536322322
+          </a>
           <p className="flex items-center justify-center md:justify-start gap-2 text-text">
             <FaEnvelope /> contact@opaldiamondclinic.com
           </p>

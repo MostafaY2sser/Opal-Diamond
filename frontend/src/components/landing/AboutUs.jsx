@@ -27,17 +27,17 @@ const AboutUs = () => {
 
           {/* Features */}
           <ul className="space-y-4 mb-10">
-            <li className="flex items-center justify-center sm:justify-normal gap-3">
+            <li className="flex  sm:justify-normal gap-3">
               <span className="text-primary text-xl">✔</span>
-              <span>أطباء جلدية وتجميل معتمدون بخبرة طبية عالية</span>
+              <span className="text-start">أطباء جلدية وتجميل معتمدون بخبرة طبية عالية</span>
             </li>
-            <li className="flex items-center justify-center sm:justify-normal gap-3">
+            <li className="flex   sm:justify-normal gap-3">
               <span className="text-primary text-xl">✔</span>
-              <span>أحدث أجهزة الليزر لإزالة الشعر وعلاج التصبغات والندبات</span>
+              <span className="text-start" >أحدث أجهزة الليزر لإزالة الشعر وعلاج التصبغات والندبات</span>
             </li>
-            <li className="flex items-center justify-center sm:justify-normal gap-3">
+            <li className="flex  sm:justify-normal gap-3">
               <span className="text-primary text-xl">✔</span>
-              <span>خطط علاج مخصصة لكل حالة مع متابعة دقيقة</span>
+              <span className="text-start">خطط علاج مخصصة لكل حالة مع متابعة دقيقة</span>
             </li>
           </ul>
 
@@ -51,18 +51,18 @@ const AboutUs = () => {
         {/* ===== Image ===== */}
         <div className="relative">
           <img
-            src="/HeroSection.jpg"
+            src="/main_bg_hero.jpg"
             alt="Laser, Dermatology & Aesthetic Center"
             className="rounded-xl shadow-lg object-cover w-full h-[300px] md:h-[420px]"
             data-aos="fade-right"
           />
 
           {/* Glass Card */}
-          <div className="absolute bottom-2 md:bottom-6 right-2 md:right-6 bg-white/20 backdrop-blur-xl rounded-md md:rounded-2xl p-3 md:p-6 border border-white/30 shadow-lg">
+          {/* <div className="absolute bottom-2 md:bottom-6 right-2 md:right-6 bg-white/20 backdrop-blur-xl rounded-md md:rounded-2xl p-3 md:p-6 border border-white/30 shadow-lg">
             <p className="text-primary font-semibold text-sm md:text-lg">
               أكثر من 10 سنوات خبرة في الجلدية والليزر
             </p>
-          </div>
+          </div> */}
         </div>
 
       </div>

@@ -19,7 +19,7 @@ const DeviceInfo = () => {
       <MainHero
         title="ملف الجهاز الطبي"
         description="تعرف على تفاصيل الجهاز، استخداماته، وصور الأجهزة المختلفة."
-        bgImage="/HeroSection.jpg"
+        bgImage="/main_bg_hero.jpg"
       />
 
 

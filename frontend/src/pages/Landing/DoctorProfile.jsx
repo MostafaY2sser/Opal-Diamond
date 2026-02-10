@@ -19,7 +19,7 @@ const DoctorProfile = () => {
       <MainHero
         title="ملف الطبيب"
         description="تعرف على بيانات الدكتور، تخصصه، خبراته، وشهاداته الطبية الموثقة."
-        bgImage="/HeroSection.jpg"
+        bgImage="/main_bg_hero.jpg"
       />
 
       {/* ===== Doctor Description ===== */}

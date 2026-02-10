@@ -14,11 +14,13 @@ const HeroSection = () => {
     <section
       className="relative min-h-screen bg-cover bg-center flex items-center pt-16 mt-[-90px]"
       style={{
-        backgroundImage: `url("/HeroSection.jpg")`,
+        backgroundImage: `url("/main_bg_hero.jpg")`,
+        // backgroundImage: `url("https://webgeek.xyz/healthcarex/images/support4.jpg`,
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/10 backdrop-blur-sm"></div>
+      {/* <div className="absolute inset-0 bg-black/10 backdrop-blur-sm"></div> */}
+      <div className="absolute inset-0 bg-[#00000057] backdrop-blur-sm"></div>
 
       <div className="container relative mx-auto grid md:grid-cols-2 gap-10 px-4 md:px-8 py-20 sm:py-10 lg:py-0">
 

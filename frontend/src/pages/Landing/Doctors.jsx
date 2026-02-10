@@ -11,7 +11,7 @@ export const Doctors = () => {
         title="أطباؤنا"
         subtitle="الخبراء الطبيون"
         description="تعرف على نخبة الأطباء المتخصصين في مختلف التخصصات الطبية لضمان أفضل رعاية صحية."
-        bgImage="/HeroSection.jpg"
+        bgImage="/main_bg_hero.jpg"
       />
 
       {/* ===== Doctors Grid ===== */}

@@ -1,15 +1,19 @@
-import React from 'react'
-import MainHero from '@components/common/MainHero'
-import ServicesSection from '@components/landing/services'
-import ContactSection from '@components/landing/ContactSection'
+
+import React from 'react';
+import MainHero from '@components/common/MainHero';
+import ServicesSection from '@components/landing/services';
+import ContactSection from '@components/landing/ContactSection';
+import { useTranslation } from 'react-i18next';
 
 const Services = () => {
+  const { t } = useTranslation();
+
   return (
     <div>
       {/* ===== Hero Section ===== */}
       <MainHero   
-        title="خدماتنا"
-        description="نقدم مجموعة شاملة من خدمات الليزر والجلدية والتجميل الطبي باستخدام أحدث الأجهزة لضمان أفضل النتائج لعملائنا."
+        title={t("services_hero_title")}
+        description={t("services_hero_description")}
         bgImage="/main_bg_hero.jpg"
       />
 
@@ -20,41 +24,28 @@ const Services = () => {
             className="text-3xl md:text-4xl font-bold text-primary mb-8"
             data-aos="fade-down"
           >
-            كيف تستفيد من خدماتنا؟
+            {t("services_how_it_works_title")}
           </h2>
           <p
             className="text-text-light mb-12"
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            نحن نسهل عليك الاستفادة من خدماتنا الطبية والتجميلية بخطوات بسيطة وسريعة لضمان راحتك وتجربة ممتازة.
+            {t("services_how_it_works_text")}
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            <div
-              className="bg-white/25 backdrop-blur-xl p-6 rounded-2xl shadow-md"
-              data-aos="fade-right"
-              data-aos-delay="150"
-            >
-              <h3 className="font-bold text-primary text-xl mb-3">1. اختر الخدمة</h3>
-              <p className="text-text-light">تصفح خدمات الليزر، العناية بالبشرة، والتجميل غير الجراحي واختر الأنسب لك.</p>
-            </div>
-            <div
-              className="bg-white/25 backdrop-blur-xl p-6 rounded-2xl shadow-md"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <h3 className="font-bold text-primary text-xl mb-3">2. احجز موعدك</h3>
-              <p className="text-text-light">احجز موعدك مباشرة عبر الموقع أو الهاتف بسهولة وأمان.</p>
-            </div>
-            <div
-              className="bg-white/25 backdrop-blur-xl p-6 rounded-2xl shadow-md"
-              data-aos="fade-left"
-              data-aos-delay="250"
-            >
-              <h3 className="font-bold text-primary text-xl mb-3">3. استمتع بالخدمة</h3>
-              <p className="text-text-light">استفد من الخدمات الطبية والتجميلية بأعلى جودة وبأحدث الأجهزة تحت إشراف فريقنا الطبي.</p>
-            </div>
+            {[1,2,3].map((step, idx) => (
+              <div
+                key={step}
+                className="bg-white/25 backdrop-blur-xl p-6 rounded-2xl shadow-md"
+                data-aos={idx===0?"fade-right": idx===1?"fade-up":"fade-left"}
+                data-aos-delay={150 + idx*50}
+              >
+                <h3 className="font-bold text-primary text-xl mb-3">{t(`services_step_${step}_title`)}</h3>
+                <p className="text-text-light">{t(`services_step_${step}_text`)}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -69,33 +60,20 @@ const Services = () => {
             className="text-3xl md:text-4xl font-bold text-primary mb-8"
             data-aos="fade-down"
           >
-            لماذا تختار خدماتنا؟
+            {t("services_benefits_title")}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            <div
-              className="p-6 border rounded-2xl shadow-md"
-              data-aos="fade-up"
-              data-aos-delay="150"
-            >
-              <h3 className="font-bold text-primary mb-2">أطباء متخصصون</h3>
-              <p className="text-text-light">فريق من أطباء الجلدية والتجميل المؤهلين لضمان أفضل رعاية لكل مراجع.</p>
-            </div>
-            <div
-              className="p-6 border rounded-2xl shadow-md"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <h3 className="font-bold text-primary mb-2">أجهزة حديثة</h3>
-              <p className="text-text-light">استخدام أحدث أجهزة الليزر والفحوصات الجلدية لتحقيق أفضل النتائج.</p>
-            </div>
-            <div
-              className="p-6 border rounded-2xl shadow-md"
-              data-aos="fade-up"
-              data-aos-delay="250"
-            >
-              <h3 className="font-bold text-primary mb-2">راحة العملاء</h3>
-              <p className="text-text-light">نوفر بيئة آمنة ومريحة لضمان تجربة سلسة ومميزة لكل مراجع.</p>
-            </div>
+            {[1,2,3].map((benefit, idx) => (
+              <div
+                key={benefit}
+                className="p-6 border rounded-2xl shadow-md"
+                data-aos="fade-up"
+                data-aos-delay={150 + idx*50}
+              >
+                <h3 className="font-bold text-primary mb-2">{t(`services_benefit_${benefit}_title`)}</h3>
+                <p className="text-text-light">{t(`services_benefit_${benefit}_text`)}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -106,4 +84,4 @@ const Services = () => {
   )
 }
 
-export default Services
+export default Services;

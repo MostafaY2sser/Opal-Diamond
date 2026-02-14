@@ -32,40 +32,365 @@
   "update_failed": "Failed to update doctor. Please check the data and try again.",
   "update_success": "Doctor updated successfully!",
   "loading_doctor": "Loading doctor data...",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :"",
-  "" :""
+
+
+
+
+
+
+
+
+  "notfound_title": "Page Not Found",
+  "notfound_message": "Sorry, the page you are looking for does not exist or has been moved.",
+  "notfound_home": "Go Back Home",
+
+
+
+
+
+
+
+
+
+  "center_tagline": "Specialized Center for Laser • Dermatology • Medical Aesthetics",
+  "center_slogan": "Healthy Skin… Natural Beauty That Lasts",
+  "center_technologies": "Latest Laser, Dermatology, and Aesthetic Technologies",
+  "center_description": "We provide comprehensive solutions for skin and hair concerns, laser sessions, non-surgical aesthetic treatments, and advanced dermatology care using the latest medical devices to ensure safe and effective results tailored to your needs.",
+  "book_now": "Book Your Appointment Now",
+  "why_choose_us": "Why Choose Our Center?",
+  "feature_doctors": "Certified dermatology and aesthetic doctors with extensive medical experience",
+  "feature_laser_devices": "Advanced laser devices for hair removal, pigmentation, and scar treatments",
+  "feature_non_surgical": "Non-surgical aesthetic services with natural and safe results",
+  "feature_followup": "Medical follow-up and personalized treatment plans for every case",
+
+
+
+
+
+
+
+
+
+  "about_badge": "About Us",
+  "about_title": "Specialized Center for Laser, Dermatology, and Medical Aesthetics",
+  "about_subtitle": "Comprehensive Care and Safe Results with Medical Standards",
+  "about_description": "We provide advanced services for treating skin and hair concerns, laser sessions, and non-surgical aesthetic treatments using the latest medical devices under the supervision of expert dermatologists to deliver safe and natural results that boost your confidence.",
+  "about_feature_doctors": "Certified dermatology and aesthetic doctors with extensive medical experience",
+  "about_feature_devices": "Advanced laser devices for hair removal, pigmentation, and scar treatments",
+  "about_feature_plans": "Personalized treatment plans for every case with close follow-up",
+  "learn_more": "Learn More",
+
+
+
+
+
+
+
+
+
+
+  "services_title": "Our Services",
+  "services_title_highlight": "in Laser, Dermatology, and Medical Aesthetics",
+  "services_description": "We provide a comprehensive range of laser sessions, dermatology treatments, and non-surgical aesthetic procedures using the latest medical technologies under the supervision of specialized doctors to achieve safe, natural, and long-lasting results.",
+  "service_derma_title": "Medical Dermatology Consultations",
+  "service_derma_desc": "Accurate examination and diagnosis of skin and hair concerns with specialized dermatologists and a personalized treatment plan for every case.",
+  "service_laser_title": "Laser Hair Removal",
+  "service_laser_desc": "Safe and effective laser sessions using the latest medical devices for long-lasting hair removal and maximum comfort.",
+  "service_skin_title": "Advanced Skin Treatments",
+  "service_skin_desc": "Treatment of pigmentation, acne, scars, and skin rejuvenation using modern technologies and certified medical products.",
+  "service_aesthetic_title": "Non-Surgical Aesthetic Treatments",
+  "service_aesthetic_desc": "Cosmetic procedures such as fillers, Botox, and facial rejuvenation to give you a natural and youthful look without surgery.",
+  
+
+
+
+
+
+
+
+
+
+  "doctors_badge": "Our Doctors",
+  "doctors_title": "Elite Medical Team",
+  "doctors_subtitle": "With Outstanding Experience",
+  "doctor_hanan_name": "Dr. Haneen Jalal Hamza",
+  "doctor_hanan_specialty": "Certified Dermatology Specialist – Saudi Commission for Health Specialties",
+  "doctor_hanan_description": "Extensive experience in dermatology, aesthetics, and laser treatments with proficiency in advanced laser devices including: laser hair removal, fractional laser and fractional radiofrequency for scars and stretch marks, Q-switch laser for pigmentation and melasma, fillers and Botox for facial contouring and wrinkle reduction, skin boosters and collagen stimulators, mesotherapy, stem cells and exosome therapy, hair loss treatments, and diagnosis and management of general dermatological conditions.",
+  "view_profile": "View Profile",
+  "doctor_profile_title": "Doctor Profile",
+  "doctor_profile_description": "Learn about the doctor's information, specialty, experience, and verified medical certificates.",
+  "doctor_bio_title": "About the Doctor",
+  "doctor_certificates_title": "Certificates",
+  "doctor_not_found": "Doctor not found",
+
+
+
+
+
+
+
+
+
+
+
+  "devices_badge": "Our Medical Devices",
+  "devices_title": "Latest Medical Devices",
+  "devices_subtitle": "For Better Service",
+  "device_spectra_name": "Spectra XT Device",
+  "device_spectra_description": "Advanced laser for pigmentation treatment, skin rejuvenation, and tattoo removal.",
+  "device_details": "Device Details",
+  "device_spectra_using": [
+    "Pigmentation removal",
+    "Carbon peel",
+    "Tattoo removal",
+    "Even skin tone, more confidence"
+  ],
+  "device_hydratouch_name": "Hydratouch Device",
+  "device_hydratouch_description": "Advanced device for deep skin cleansing, hydration, and instant radiance.",
+  "device_hydratouch_using": [
+    "Because your skin deserves the best",
+    "Deep cleanses and restores hydration and natural glow",
+    "Clearer and smoother skin from the first session"
+  ],
+  "device_scarlett_name": "Scarlett S Device",
+  "device_scarlett_description": "Microneedling with radio frequency for skin tightening and collagen stimulation.",
+  "device_scarlett_using": [
+    "Microneedling radio frequency technology",
+    "Tightens skin, reduces pores, improves texture safely and effectively",
+    "Stimulates collagen production in face and neck",
+    "Treats scars and wounds"
+  ],
+  "device_candela_name": "Candela GentleLase Pro Max",
+  "device_candela_description": "Advanced laser for fast and safe hair removal for all skin types.",
+  "device_candela_using": [
+    "Most effective hair removal technology, safe and precise",
+    "Faster sessions and more comfort",
+    "Effective for all hair types"
+  ],
+  "device_dueto_name": "Dueto Hair Removal Device",
+  "device_dueto_description": "Fast and safe hair removal device suitable for all skin types.",
+  "device_dueto_using": [
+    "Latest hair removal technologies",
+    "Fast and effective hair removal for smooth and radiant skin",
+    "Suitable for all skin types",
+    "Safe for dark skin"
+  ],
+  "device_profile_title": "Medical Device Profile",
+  "device_profile_description": "Learn about the device details, uses, and different device images.",
+  "device_bio_title": "About the Device",
+  "device_images_title": "Device Images",
+  "device_not_found": "Device not found",
+
+
+  
+
+
+
+
+
+
+
+  "testimonials_tagline": "Customer Reviews",
+  "testimonials_title": "Our Clients' Trust is Our Success Secret",
+
+  "testimonial1_name": "Sarah Mohamed",
+  "testimonial1_role": "Review",
+  "testimonial1_comment": "I tried laser hair removal sessions and the result was excellent from the first session. The device is modern and the service is very professional.",
+
+  "testimonial2_name": "Reem Abdullah",
+  "testimonial2_role": "Review",
+  "testimonial2_comment": "The doctor explained my case in detail and created a skin treatment plan. I noticed a huge improvement in my skin's glow within weeks.",
+
+  "testimonial3_name": "Fatima Ali",
+  "testimonial3_role": "Review",
+  "testimonial3_comment": "Acne and pigmentation treatments were very effective, and the continuous follow-up kept me confident throughout the process.",
+
+  "testimonial4_name": "Noura Salem",
+  "testimonial4_role": "Review",
+  "testimonial4_comment": "I had a filler and Botox session, and the results were very natural without exaggeration. I highly recommend non-surgical aesthetics here.",
+
+  "testimonial5_name": "Shahd Ahmed",
+  "testimonial5_role": "Review",
+  "testimonial5_comment": "The center is clean and organized, appointments are precise, and the devices are truly advanced, making it a trusted medical place.",
+
+  "testimonial6_name": "Mai Abdullah",
+  "testimonial6_role": "Review",
+  "testimonial6_comment": "The nursing staff is very cooperative and attentive to details. My experience with skin rejuvenation sessions was amazing, and I will definitely return.",
+
+
+
+
+
+
+
+
+
+  "faq_tagline": "Frequently Asked Questions",
+  "faq_title": "Answers to the Most Common Questions",
+
+  "faq1_question": "What are the working hours at the medical center?",
+  "faq1_answer": "The center operates from Saturday to Thursday, from 10 AM to 10 PM.",
+
+  "faq2_question": "Do I need to book an appointment for laser or aesthetic sessions?",
+  "faq2_answer": "Yes, it’s recommended to book in advance to ensure doctors and devices are available. You can book via the website or contact the center.",
+
+  "faq3_question": "Does the center provide specialized dermatology consultations?",
+  "faq3_answer": "Yes, the center offers precise dermatology consultations with specialized doctors to determine the best treatment plan for each case.",
+
+  "faq4_question": "Does the center accept health insurance?",
+  "faq4_answer": "No health insurance is accepted.",
+
+  "faq5_question": "Are parking spaces available for visitors?",
+  "faq5_answer": "Yes, there is a wide and free parking area for all visitors and patients to ensure your comfort.",
+
+  "faq6_question": "What procedures are followed to ensure customer safety?",
+  "faq6_answer": "We use the latest medical devices and follow strict health safety standards, with continuous sterilization of all treatment rooms and devices.",
+
+
+
+
+
+
+
+
+
+
+
+  "contact_tagline": "Contact Us",
+  "contact_title_prefix": "Book",
+  "contact_title_highlight": "Your Appointment",
+  "contact_title_suffix": "or Ask Us",
+  "contact_description": "For any inquiries or appointment booking, use the form below or the contact details of the center.",
+  "contact_location": "Location",
+  "contact_location_address": "Eastern Province - Dammam - Saihat - Al-Muntazah District - Ibrahim Al-Shatbi Street - JFC Complex, 4th Floor",  "contact_phone": "Phone",
+  "contact_email": "Email",
+  "contact_form_name": "Your Name",
+  "contact_form_email": "Email",
+  "contact_form_phone": "Phone Number",
+  "contact_form_message": "Your Message",
+  "contact_form_submit": "Send Message",
+
+
+
+
+
+
+
+
+
+
+  "about_hero_title": "About Us",
+  "about_hero_description": "We are a specialized center in laser, dermatology, and medical aesthetics, committed to providing the best health and beauty care for every client using the latest medical devices.",
+  "about_vision_title": "Our Vision & Mission",
+  "about_vision_text": "Our vision is to be the leading center in the Kingdom in laser, dermatology, and medical aesthetics, by providing high-quality services based on the latest technologies and medical devices.",
+  "about_mission_text": "Our mission is to provide a safe and comfortable environment for all our clients, with a specialized medical team ensuring each patient receives the best health and aesthetic care.",
+  "about_history_title": "Our History & Achievements",
+  "about_history_founding_title": "Founding the Center",
+  "about_history_founding_text": "We are a modern center specializing in laser, skincare, and medical aesthetics, committed to providing the best services using the latest devices and technologies.",
+  "about_history_latest_devices_title": "Latest Devices",
+  "about_history_latest_devices_text": "We provide the latest laser and dermatological examination devices to ensure accurate and effective results for every client.",
+  "about_history_our_team_title": "Our Medical Team",
+  "about_history_our_team_text": "The center includes a group of qualified dermatologists and aesthetic doctors with extensive experience in various dermatological and cosmetic treatments.",
+  "about_values_title": "Our Core Values",
+  "about_values_quality_icon": "🎯",
+  "about_values_quality_title": "Medical Quality",
+  "about_values_quality_text": "Providing the highest standards of quality and safety in all laser, dermatology, and aesthetic services.",
+  "about_values_safety_icon": "🛡️",
+  "about_values_safety_title": "Safe Environment",
+  "about_values_safety_text": "Providing a healthy and safe environment for all clients during all medical and aesthetic procedures.",
+  "about_values_innovation_icon": "💡",
+  "about_values_innovation_title": "Innovation",
+  "about_values_innovation_text": "Using the latest innovative medical technologies and devices to achieve the best results.",
+  "about_values_respect_icon": "🤝",
+  "about_values_respect_title": "Respect",
+  "about_values_respect_text": "Treating every client with respect and care to ensure a comfortable and exceptional treatment experience.",
+
+
+
+  
+
+
+
+
+
+
+  "services_hero_title": "Our Services",
+  "services_hero_description": "We offer a comprehensive range of laser, dermatology, and medical aesthetic services using the latest devices to ensure the best results for our clients.",
+  "services_how_it_works_title": "How to Benefit from Our Services?",
+  "services_how_it_works_text": "We make it easy for you to benefit from our medical and aesthetic services in simple and quick steps to ensure your comfort and an excellent experience.",
+  "services_step_1_title": "1. Choose a Service",
+  "services_step_1_text": "Browse laser, skincare, and non-surgical aesthetic services and choose the most suitable for you.",
+  "services_step_2_title": "2. Book Your Appointment",
+  "services_step_2_text": "Book your appointment directly via the website or phone easily and securely.",
+  "services_step_3_title": "3. Enjoy the Service",
+  "services_step_3_text": "Benefit from medical and aesthetic services with the highest quality and latest devices under our medical team supervision.",
+  "services_benefits_title": "Why Choose Our Services?",
+  "services_benefit_1_title": "Specialized Doctors",
+  "services_benefit_1_text": "A team of qualified dermatologists and aesthetic doctors ensuring the best care for every client.",
+  "services_benefit_2_title": "Modern Devices",
+  "services_benefit_2_text": "Use of the latest laser and dermatological devices to achieve optimal results.",
+  "services_benefit_3_title": "Client Comfort",
+  "services_benefit_3_text": "We provide a safe and comfortable environment to ensure a smooth and exceptional experience for every client.",
+
+
+
+
+
+  
+  "doctors_hero_title": "Our Doctors",
+  "doctors_hero_subtitle": "Medical Experts",
+  "doctors_hero_description": "Meet our elite team of specialized doctors across various medical fields to ensure the best healthcare.",
+
+
+
+
+
+
+
+  
+  "devices_hero_title": "Medical Devices",
+  "devices_hero_subtitle": "Modern Equipment",
+  "devices_hero_description": "We use the latest medical devices to ensure accurate diagnosis and treatment for every patient.",
+
+
+
+
+
+
+  "contact_hero_title": "Contact Us",
+  "contact_hero_description": "For any inquiry or appointment, you can contact us directly or send a message through the form.",
+  "contact_intro_title": "We’re Always Here to Help",
+  "contact_intro_description": "Our medical team is ready to answer all your questions and provide the best healthcare. Don’t hesitate to contact us or book your appointment now.",
+  "contact_button_text": "Contact Now",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "footer_description": "We provide comprehensive healthcare using the latest medical devices and technologies, under the supervision of a team of specialized doctors.",
+  "contact_us": "Contact Us",
+  "contact_location_link": "https://share.google/wgXwzqDvhuFcmS1To",
+  "quick_links": "Quick Links",
+  "about_us": "About Us",
+  "footer_rights": "Opal Diamond Clinic. All rights reserved."
+
+
 }

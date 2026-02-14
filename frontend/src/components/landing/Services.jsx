@@ -1,15 +1,14 @@
-import {
-  FaUserMd,
-  FaStethoscope,
-  FaMicroscope,
-  FaHeartbeat,
-} from "react-icons/fa";
+
+import { useTranslation } from "react-i18next";
 import "aos/dist/aos.css";
 import ServiceCard from "./ServiceCard";
 import { services } from "../../data/services";
 
 
 const ServicesSection = () => {
+  
+  const { t } = useTranslation();
+  
   return (
     <section
       className="py-10 md:py-20 relative w-full"
@@ -29,7 +28,7 @@ const ServicesSection = () => {
           data-aos="fade-up"
           className="text-xl md:text-4xl font-extrabold text-primary mb-4"
         >
-          خدماتنا <span className="text-primary">في الليزر والجلدية والتجميل الطبي</span>
+          {t('services_title')} <span className="text-primary">{t('services_title_highlight')}</span>
         </h2>
 
         <p
@@ -37,8 +36,7 @@ const ServicesSection = () => {
           data-aos-delay="100"
           className="text-text max-w-2xl mx-auto mb-12 text-base sm:text-lg"
         >
-          نوفر باقة متكاملة من جلسات الليزر، علاجات الجلدية، والإجراءات التجميلية غير الجراحية
-          باستخدام أحدث التقنيات الطبية وتحت إشراف أطباء متخصصين لتحقيق نتائج آمنة وطبيعية تدوم.
+          {t('services_description')}
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
@@ -48,8 +46,8 @@ const ServicesSection = () => {
               <ServiceCard
                 key={service.id}
                 icon={<Icon className="text-4xl text-primary" />}
-                title={service.title}
-                description={service.description}
+                title={t(service.titleKey)}
+                description={t(service.descriptionKey)}
                 delay={index * 100}
               />
             );

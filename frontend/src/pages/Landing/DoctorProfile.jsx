@@ -1,57 +1,76 @@
+
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { doctors } from "../../data/doctors";
 import MainHero from "../../components/common/MainHero";
 
-
 const DoctorProfile = () => {
+  const { t } = useTranslation();
   const { id } = useParams(); 
   const doctor = doctors.find((doc) => doc.id === parseInt(id));
 
-  // حالة لتخزين الصورة المفتوحة
   const [openCert, setOpenCert] = useState(null);
 
-  if (!doctor) return <p className="text-center py-20">الدكتور غير موجود</p>;
+  if (!doctor)
+    return <p className="text-center py-20">{t("doctor_not_found")}</p>;
 
   return (
     <div>
       {/* ===== Hero Section ===== */}
       <MainHero
-        title="ملف الطبيب"
-        description="تعرف على بيانات الدكتور، تخصصه، خبراته، وشهاداته الطبية الموثقة."
+        title={t("doctor_profile_title")}
+        description={t("doctor_profile_description")}
         bgImage="/main_bg_hero.jpg"
       />
 
       {/* ===== Doctor Description ===== */}
       <section className="py-10 md:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-5xl mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-8">
             {/* Doctor Img */}
             <img
               src={doctor.image}
-              alt={doctor.name}
+              alt={t(doctor.nameKey)}
               className="w-full md:w-1/2 h-96 rounded-2xl object-cover shadow-lg"
             />
 
             {/* Doctor Info */}
             <div className="md:w-2/3">
-              <h2 className="text-2xl font-bold text-primary mb-4">نبذة عن الدكتور</h2>
-              <p className="text-primary sm:text-xl font-semibold mb-6">{doctor.name}</p>
-              <p className="text-primary sm:text-xl font-medium mb-6">{doctor.specialty}</p>
-              <p className="text-primary mb-6 font-medium" style={{ lineHeight:"34px" }}>{doctor.description}</p>
+              <h2 className="text-2xl font-bold text-primary mb-4">
+                {t("doctor_bio_title")}
+              </h2>
+
+              <p className="text-primary sm:text-xl font-semibold mb-6">
+                {t(doctor.nameKey)}
+              </p>
+
+              <p className="text-primary sm:text-xl font-medium mb-6">
+                {t(doctor.specialtyKey)}
+              </p>
+
+              <p
+                className="text-primary mb-6 font-medium"
+                style={{ lineHeight: "34px" }}
+              >
+                {t(doctor.descriptionKey)}
+              </p>
             </div>
           </div>
 
           {/* Certificates */}
           {doctor.certificates && doctor.certificates.length > 0 && (
             <div className="mt-8">
-              <h3 className="text-primary font-bold mb-4">الشهادات</h3>
+              <h3 className="text-primary font-bold mb-4">
+                {t("doctor_certificates_title")}
+              </h3>
+
               <div className="flex flex-wrap gap-4">
                 {doctor.certificates.map((cert, index) => (
                   <img
                     key={index}
                     src={cert}
-                    alt={`شهادة ${doctor.name} ${index + 1}`}
+                    alt={`${t(doctor.nameKey)} Certificate ${index + 1}`}
                     className="w-40 h-28 object-cover rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform"
                     onClick={() => setOpenCert(cert)}
                   />

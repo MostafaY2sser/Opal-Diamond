@@ -11,6 +11,22 @@ const Navbar = () => {
   const isRTL = i18n.language === "ar";
 
 
+  const menuLinks = [
+  { path: "/", label: t("home") },
+    { path: "/about", label: t("about") },
+    { path: "/services", label: t("services") },
+    { path: "/doctors", label: t("doctors") },
+    { path: "/devices", label: t("devices") },
+    { path: "/contact", label: t("contact") },
+  ];
+
+  const socialLinks = [
+    { href: "https://www.facebook.com/share/1ArpPY2DFL/", icon: <FaFacebookF /> },
+    { href: "https://www.tiktok.com/@opall.diamond?_r=1&_t=zs-93irjgquwfw", icon: <FaTiktok /> },
+    { href: "https://www.instagram.com/opall.diamond?igsh=bzRlbG02enVvaWdk", icon: <FaInstagram /> },
+    { href: "https://www.snapchat.com/add/opall.diamond?share_id=wIyqzW9TZhc&locale=ar-AE", icon: <FaSnapchat /> },
+  ];
+
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
@@ -54,68 +70,28 @@ const Navbar = () => {
                 scrolled ? "text-gray-700" : "text-text"
               }`}
             >
-              <li>
-                <NavLink  to="/" className={({ isActive }) =>
-                  `hover:text-primary transition ${
-                    isActive ? "text-primary active font-bold" : ""
-                  }`
-                }>
-                  {t('home')}
-                </NavLink >
-              </li>
-              <li>
-                <NavLink  to="/about" className={({ isActive }) =>
-                  `hover:text-primary transition ${
-                    isActive ? "text-primary active font-bold" : ""
-                  }`
-                }>
-                {t('about')}
-                </NavLink >
-              </li>
-              <li>
-                <NavLink  to="/services" className={({ isActive }) =>
-                  `hover:text-primary transition ${
-                    isActive ? "text-primary active font-bold" : ""
-                  }`
-                }>
-                  {t('services')}
-                </NavLink >
-              </li>
-              <li>
-                <NavLink  to="/doctors" className={({ isActive }) =>
-                  `hover:text-primary transition ${
-                    isActive ? "text-primary active font-bold" : ""
-                  }`
-                }>
-                  {t('doctors')}
-                </NavLink >
-              </li>
-              <li>
-                <NavLink  to="/devices" className={({ isActive }) =>
-                  `hover:text-primary transition ${
-                    isActive ? "text-primary active font-bold" : ""
-                  }`
-                }>
-                  {t('devices')}
-                </NavLink >
-              </li>
-              <li>
-                <NavLink  to="/contact" className={({ isActive }) =>
-                  `hover:text-primary transition ${
-                    isActive ? "text-primary active font-bold" : ""
-                  }`
-                }>
-                  {t('contact')}
-                </NavLink >
-              </li>
-            </ul>
+              {menuLinks.map((link, index) => (
+                <li key={index}>
+                  <NavLink
+                    to={link.path}
+                    className={({ isActive }) =>
+                      `hover:text-primary transition ${
+                        isActive ? "text-text bg-primary active  px-4 rounded-full py-1 hover:text-text" : ""
+                      }`
+                    }
+                  >
+                    {link.label}
+                  </NavLink>
+                </li>
+              ))}
+          </ul>
           </div>
 
         <div className="flex gap-5 items-center">
           
           {/* Toggle Lang */}
           <button
-            className={`text-text font-semibold sm:border-2 border-primary p-1 sm:p-2 rounded-xl  ${isRTL ? 'ml-10 sm:ml-0' : 'mr-10 sm:mr-0'  }`}
+            className={`text-text font-semibold sm:border-2 border-primary p-1 sm:p-2 rounded-xl  ${isRTL ? 'ml-10 md:ml-0' : 'mr-10 md:mr-0'  }`}
             onClick={() => {
               const newLang = i18n.language === "ar" ? "en" : "ar";
               i18n.changeLanguage(newLang);
@@ -126,19 +102,18 @@ const Navbar = () => {
           </button>
 
           {/* Social Media Links */}
-          <div className="hidden md:flex justify-center md:justify-start gap-4 ">
-            <a href="https://www.facebook.com/share/1ArpPY2DFL/" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
-              <FaFacebookF />
-            </a>
-            <a href="https://www.tiktok.com/@opall.diamond?_r=1&_t=zs-93irjgquwfw" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
-              <FaTiktok />
-            </a>
-            <a href="https://www.instagram.com/opall.diamond?igsh=bzRlbG02enVvaWdk" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
-              <FaInstagram />
-            </a>
-            <a href="https://www.snapchat.com/add/opall.diamond?share_id=wIyqzW9TZhc&locale=ar-AE" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
-              <FaSnapchat/>
-            </a>
+          <div className="hidden md:flex justify-center md:justify-start gap-4">
+            {socialLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.icon}
+              </a>
+            ))}
           </div>
         </div>
 
@@ -160,71 +135,37 @@ const Navbar = () => {
           }`}
         >
           <ul className="flex flex-col items-center gap-8">
-            <li>
-              <NavLink  to="/" onClick={closeMenu} className="hover:text-primary">
-                الرئيسية
-              </NavLink >
-            </li>
-            <li>
-              <NavLink 
-                to="/about"
-                onClick={closeMenu}
-                className="hover:text-primary"
-              >
-                نبذة عنا
-              </NavLink >
-            </li>
-            <li>
-              <NavLink 
-                to="/services"
-                onClick={closeMenu}
-                className="hover:text-primary"
-              >
-                الخدمات
-              </NavLink >
-            </li>
-            <li>
-              <NavLink 
-                to="/doctors"
-                onClick={closeMenu}
-                className="hover:text-primary"
-              >
-                الاطباء
-              </NavLink >
-            </li>
-            <li>
-              <NavLink 
-                to="/devices"
-                onClick={closeMenu}
-                className="hover:text-primary"
-              >
-                الاجهزة
-              </NavLink >
-            </li>
-            <li>
-              <NavLink 
-                to="/contact"
-                onClick={closeMenu}
-                className="hover:text-primary"
-              >
-                تواصل معنا
-              </NavLink >
-            </li>
+            {menuLinks.map((link, index) => (
+              <li key={index}>
+                <NavLink
+                  to={link.path}
+                  onClick={closeMenu}
+                  // className="hover:text-primary"
+                  className={({ isActive }) =>
+                      `hover:text-primary transition ${
+                        isActive ? "text-text bg-primary active px-4 rounded-full py-1 hover:text-text" : ""
+                      }`
+                    }
+                >
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
           </ul>
+          
           {/* Social Media Links */}
           <div className="md:hidden flex justify-center md:justify-start gap-4 mt-10">
-            <a href="https://www.facebook.com/share/1ArpPY2DFL/" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
-              <FaFacebookF />
-            </a>
-            <a href="https://www.tiktok.com/@opall.diamond?_r=1&_t=zs-93irjgquwfw" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
-              <FaTiktok />
-            </a>
-            <a href="https://www.instagram.com/opall.diamond?igsh=bzRlbG02enVvaWdk" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
-              <FaInstagram />
-            </a>
-            <a href="https://www.snapchat.com/add/opall.diamond?share_id=wIyqzW9TZhc&locale=ar-AE" className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition">
-              <FaSnapchat/>
-            </a>
+            {socialLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                className="bg-primary p-3 rounded-full text-text hover:bg-primary-dark transition"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.icon}
+              </a>
+            ))}
           </div>
         </div>
       </nav>

@@ -35,7 +35,7 @@ const ButtonFill = ({ children, href = "#", className }) => {
         }
       `}</style> */}
 
-      <div className="button-bg w-[200px] rounded-lg p-[2px] hover:scale-105 transition-transform duration-300 active:scale-100">
+      <div className="button-bg  rounded-lg p-[2px] hover:scale-105 transition-transform duration-300 active:scale-100">
         <Link
           to={href}
           className={classNames(

@@ -1,50 +1,46 @@
+
+
 export const testimonials = [
   {
     id: 1,
-    name: "سارة محمد",
-    role: "مراجعة",
+    nameKey: "testimonial1_name",
+    roleKey: "testimonial1_role",
+    commentKey: "testimonial1_comment",
     image: "/doctor_1.webp",
-    comment:
-      "جربت جلسات إزالة الشعر بالليزر والنتيجة كانت ممتازة من أول جلسة، الجهاز حديث والتعامل احترافي جدًا.",
   },
   {
     id: 2,
-    name: "ريم عبدالله",
-    role: "مراجعة",
+    nameKey: "testimonial2_name",
+    roleKey: "testimonial2_role",
+    commentKey: "testimonial2_comment",
     image: "/doctor_2.webp",
-    comment:
-      "الدكتورة شرحت لي حالتي بالتفصيل وحددت خطة علاج للبشرة، لاحظت فرق كبير في نضارة بشرتي خلال أسابيع.",
   },
   {
     id: 3,
-    name: "فاطمة علي",
-    role: "مراجعة",
+    nameKey: "testimonial3_name",
+    roleKey: "testimonial3_role",
+    commentKey: "testimonial3_comment",
     image: "/doctor_3.jpg",
-    comment:
-      "علاج حب الشباب والتصبغات كان فعّال جدًا، والمتابعة المستمرة خلتني مطمئنة طول فترة العلاج.",
   },
   {
     id: 4,
-    name: "نورة سالم",
-    role: "مراجعة",
+    nameKey: "testimonial4_name",
+    roleKey: "testimonial4_role",
+    commentKey: "testimonial4_comment",
     image: "/doctor_1.webp",
-    comment:
-      "عملت جلسة فيلر وبوتوكس وكانت النتائج طبيعية جدًا بدون أي مبالغة، أنصح أي حد بالتجميل غير الجراحي هنا.",
   },
   {
     id: 5,
-    name: "شهد أحمد",
-    role: "مراجعة",
+    nameKey: "testimonial5_name",
+    roleKey: "testimonial5_role",
+    commentKey: "testimonial5_comment",
     image: "/doctor_2.webp",
-    comment:
-      "المركز نظيف ومنظم والمواعيد دقيقة، والأجهزة متطورة فعلًا وتحس إنك في مكان طبي موثوق.",
   },
   {
     id: 6,
-    name: "مي عبدالله",
-    role: "مراجعة",
+    nameKey: "testimonial6_name",
+    roleKey: "testimonial6_role",
+    commentKey: "testimonial6_comment",
     image: "/doctor_3.jpg",
-    comment:
-      "طاقم التمريض متعاون جدًا والاهتمام بالتفاصيل واضح، تجربتي مع جلسات النضارة كانت رائعة وهرجع أكيد تاني.",
   },
 ];

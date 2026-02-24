@@ -23,7 +23,7 @@
   "doctor_image": "Doctor Image",
   "preview_image": "Preview Image:",
   "certificates_label": "Certificates (You can upload more than one)",
-  "certificate": "Certificate",
+  "certificates": "Certificate",
   "adding": "Adding...",
   "add_doctor": "Add Doctor",
   "add_failed": "Failed to add doctor. Please check the images and try again.",
@@ -180,6 +180,13 @@
   "device_bio_title": "About the Device",
   "device_images_title": "Device Images",
   "device_not_found": "Device not found",
+  "add_device":"Add Device",
+  "edit_device":"Edit_Device",
+   "features_ar":"features Arabic",
+  "features_en":"features English",
+  "main_image":"Main Image",
+  "additional_images":"Additional Images",
+  "comma_separated" :"Comma Separated",
 
 
   
@@ -262,7 +269,7 @@
   "contact_title_suffix": "or Ask Us",
   "contact_description": "For any inquiries or appointment booking, use the form below or the contact details of the center.",
   "contact_location": "Location",
-  "contact_location_address": "Eastern Province - Dammam - Saihat - Al-Muntazah District - Ibrahim Al-Shatbi Street - JFC Complex, 4th Floor",  "contact_phone": "Phone",
+  "contact_location_address": "Eastern Province - Dammam - Saihat - Al-Muntazah District - Ibrahim Al-Shatbi Street - JFC Commercial Complex, 4th Floor",
   "contact_email": "Email",
   "contact_form_name": "Your Name",
   "contact_form_email": "Email",
@@ -362,9 +369,9 @@
   "contact_intro_title": "We’re Always Here to Help",
   "contact_intro_description": "Our medical team is ready to answer all your questions and provide the best healthcare. Don’t hesitate to contact us or book your appointment now.",
   "contact_button_text": "Contact Now",
-
-
-
+  "message_sent_successfully":"Message sent successfully",
+  "error_sending_message":"Error sending message",
+  "sending":"Sending...",
 
 
 
@@ -390,7 +397,10 @@
   "contact_location_link": "https://share.google/wgXwzqDvhuFcmS1To",
   "quick_links": "Quick Links",
   "about_us": "About Us",
-  "footer_rights": "Opal Diamond Clinic. All rights reserved."
+  "footer_rights": "Opal Diamond Clinic. All rights reserved.",
+
+
+  "dashboard_welcome": "Welcome to the Dashboard"
 
 
 }

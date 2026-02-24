@@ -33,7 +33,6 @@ export const AddDevices = () => {
     formData.append("description_en", descriptionEn);
     formData.append("status", status);
 
-    // ابعت كل ميزة كمصفوفة مباشرة
     featuresAr.forEach((feature) => formData.append("features_ar[]", feature));
     featuresEn.forEach((feature) => formData.append("features_en[]", feature));
 
@@ -43,7 +42,7 @@ export const AddDevices = () => {
     }
 
     await addDevice(formData);
-    alert("تم إضافة الجهاز بنجاح");
+    // alert("تم إضافة الجهاز بنجاح");
     navigate("/dashboard/devices");
   } catch (err) {
     console.error(err);
@@ -128,7 +127,7 @@ export const AddDevices = () => {
           />
         </div>
 
-        <div>
+        <div className="hidden">
           <label className="block mb-1 font-semibold">{t("status")}</label>
           <select
             value={status}
@@ -164,7 +163,7 @@ export const AddDevices = () => {
 
         <button
           type="submit"
-          className="bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark transition"
+          className="bg-primary text-text px-4 py-2 rounded hover:bg-primary-dark transition"
         >
           {t("add_device")}
         </button>

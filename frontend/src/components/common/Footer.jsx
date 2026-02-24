@@ -31,7 +31,7 @@ const Footer = () => {
           </p>
 
           {/* Social Media */}
-          <div className="hidden md:flex justify-center md:justify-start gap-4">
+          <div className="flex justify-center md:justify-start gap-4">
             {socialLinks.map((link, index) => (
               <a
                 key={index}
@@ -59,9 +59,12 @@ const Footer = () => {
           <a href={`tel:${t("contact_phone")}`} className="flex items-center justify-center md:justify-start gap-2 text-text">
             <FaPhoneAlt />  0536322322
           </a>
-          <p className="flex items-center justify-center md:justify-start gap-2 text-text">
+          <a  
+            href="mailto:contact@opaldiamondclinic.com"  
+            className="flex items-center justify-center md:justify-start gap-2 text-text"
+          >
             <FaEnvelope /> contact@opaldiamondclinic.com
-          </p>
+          </a>
         </div>
 
         {/* Quick Links */}

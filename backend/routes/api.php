@@ -5,6 +5,7 @@ use App\Http\Controllers\API\DoctorController;
 use App\Http\Controllers\API\EquipmentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,10 @@ Route::get('equipment/{id}', [EquipmentController::class, 'show']);
 Route::prefix('admin')->group(function () {
     Route::post('login', [AuthController::class, 'login']);
 });
+
+
+
+Route::post('contact', [ContactController::class, 'send']);
 
 
 // ---------- Admin Protected ----------

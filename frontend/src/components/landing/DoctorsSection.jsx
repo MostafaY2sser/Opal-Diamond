@@ -1,16 +1,30 @@
+
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import DoctorCard from "./DoctorCard";
-import { doctors } from "../../data/doctors";
+import { getDoctors } from "../../api/doctors.api";
+import Loader from "../../components/common/Loader";
+import useDoctors from "../../hooks/doctors/useDoctors";
 
 const DoctorsSection = () => {
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
+  const isRTL = i18n.language === "ar";
+ const { doctors, loading } = useDoctors();
+
+  if (loading) {
+    return (
+      <div className="mt-20">
+        <Loader />
+      </div>
+    );
+  }
 
   return (
     <section className="py-10 md:py-20 bg-white" id="doctors">
       <div className="max-w-7xl mx-auto px-4">
 
-        {/* ===== Section Title ===== */}
-        <div className="text-center mb-8 md:mb-14" data-aos="zoom-in">
+        {/* Section Title */}
+        <div className="text-center mb-8 md:mb-14">
           <span className="inline-block mb-4 px-4 py-2 text-sm font-semibold text-primary bg-primary/10 rounded-full">
             {t("doctors_badge")}
           </span>
@@ -23,13 +37,13 @@ const DoctorsSection = () => {
           </h2>
         </div>
 
-        {/* ===== Doctors Grid ===== */}
+        {/* Doctors Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {doctors.map((doctor) => (
-            <DoctorCard 
-              key={doctor.id} 
-              doctor={doctor} 
-              delay={100}
+            <DoctorCard
+              key={doctor.id}
+              doctor={doctor}
+              isRTL={isRTL}
             />
           ))}
         </div>

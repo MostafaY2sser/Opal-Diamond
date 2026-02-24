@@ -8,6 +8,7 @@ const EditDoctor = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const [existingCertificates, setExistingCertificates] = useState([]); 
 
   const [formData, setFormData] = useState({
     name_ar: "",
@@ -48,6 +49,9 @@ const EditDoctor = () => {
           image: null,
           certificates: [],
         });
+
+        setExistingCertificates(doctor.certificates || []);
+
         setPreviewImage(doctor.image || null);
       } catch (err) {
         console.log(err);
@@ -152,7 +156,7 @@ const EditDoctor = () => {
         </div>
 
         <div>
-          <label htmlFor="specialty_en" className="block mb-1 font-semibold">{t('specialty_er')} </label>
+          <label htmlFor="specialty_en" className="block mb-1 font-semibold">{t('specialty_en')} </label>
           <input
             type="text"
             id="specialty_en"
@@ -201,17 +205,32 @@ const EditDoctor = () => {
         </div>
 
         <div>
-          <label htmlFor="certificates" className="block mb-1 font-semibold"> {t('certificate')}</label>
+          <label className="block mb-2 font-semibold">
+            {t('certificate')}
+          </label>
+
           <input
             type="file"
-            id="certificates"
             name="certificates"
-            accept=".jpg,.jpeg,.png,.webp"
             multiple
+            accept=".jpg,.jpeg,.png,.webp"
             onChange={handleChange}
-            className="w-full"
+            className="w-full mb-4"
           />
-        </div>
+
+          <div className="flex flex-wrap gap-4">
+              {existingCertificates.map((cert, index) => (
+                <div key={`old-${index}`}>
+                  <img
+                    src={cert.image || cert}
+                    alt="Certificate"
+                    className="w-24 h-24 object-cover rounded border"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
 
         <button
           type="submit"

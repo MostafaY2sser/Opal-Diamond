@@ -31,7 +31,7 @@ const AboutUs = () => {
           <ul className="space-y-4 mb-10">
             <li className="flex sm:justify-normal gap-3">
               <span className="text-primary text-xl">✔</span>
-              <span>{t("about_feature_doctors")}</span>
+              <span >{t("about_feature_doctors")}</span>
             </li>
 
             <li className="flex sm:justify-normal gap-3">

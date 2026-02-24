@@ -1,85 +1,92 @@
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { doctors } from "../../data/doctors";
+import { getDoctorById } from "../../api/doctors.api";
 import MainHero from "../../components/common/MainHero";
+import Loader from "../../components/common/Loader";
+import useDoctor from "../../hooks/doctors/useDoctor";
 
 const DoctorProfile = () => {
-  const { t } = useTranslation();
-  const { id } = useParams(); 
-  const doctor = doctors.find((doc) => doc.id === parseInt(id));
-
+  
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar";
+  const { id } = useParams();
   const [openCert, setOpenCert] = useState(null);
+  const { doctor, loading } = useDoctor(id);
 
-  if (!doctor)
-    return <p className="text-center py-20">{t("doctor_not_found")}</p>;
+
 
   return (
     <div>
-      {/* ===== Hero Section ===== */}
       <MainHero
         title={t("doctor_profile_title")}
         description={t("doctor_profile_description")}
         bgImage="/main_bg_hero.jpg"
       />
 
-      {/* ===== Doctor Description ===== */}
-      <section className="py-10 md:py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row gap-8">
-            {/* Doctor Img */}
-            <img
-              src={doctor.image}
-              alt={t(doctor.nameKey)}
-              className="w-full md:w-1/2 h-96 rounded-2xl object-cover shadow-lg"
-            />
+      { loading 
+        ?(<div className="py-10"><Loader /></div>)
+        : (
+          <section className="py-10 md:py-20 bg-white">
+            <div className="max-w-5xl mx-auto px-4">
+              <div className="flex flex-col md:flex-row gap-8">
 
-            {/* Doctor Info */}
-            <div className="md:w-2/3">
-              <h2 className="text-2xl font-bold text-primary mb-4">
-                {t("doctor_bio_title")}
-              </h2>
+                {/* Doctor Img */}
+                <img
+                  src={doctor.image}
+                  alt={isRTL ? doctor.name_ar : doctor.name_en}
+                  className="w-full md:w-1/2 h-96 rounded-2xl object-cover shadow-lg"
+                />
 
-              <p className="text-primary sm:text-xl font-semibold mb-6">
-                {t(doctor.nameKey)}
-              </p>
+                {/* Doctor Info */}
+                <div className="md:w-2/3">
+                  <h2 className="text-2xl font-bold text-primary mb-4">
+                    {t("doctor_bio_title")}
+                  </h2>
 
-              <p className="text-primary sm:text-xl font-medium mb-6">
-                {t(doctor.specialtyKey)}
-              </p>
+                  <p className="text-primary sm:text-xl font-semibold mb-6">
+                    {isRTL ? doctor.name_ar : doctor.name_en}
+                  </p>
 
-              <p
-                className="text-primary mb-6 font-medium"
-                style={{ lineHeight: "34px" }}
-              >
-                {t(doctor.descriptionKey)}
-              </p>
-            </div>
-          </div>
+                  <p className="text-primary sm:text-xl font-medium mb-6">
+                    {isRTL ? doctor.specialty_ar : doctor.specialty_en}
+                  </p>
 
-          {/* Certificates */}
-          {doctor.certificates && doctor.certificates.length > 0 && (
-            <div className="mt-8">
-              <h3 className="text-primary font-bold mb-4">
-                {t("doctor_certificates_title")}
-              </h3>
-
-              <div className="flex flex-wrap gap-4">
-                {doctor.certificates.map((cert, index) => (
-                  <img
-                    key={index}
-                    src={cert}
-                    alt={`${t(doctor.nameKey)} Certificate ${index + 1}`}
-                    className="w-40 h-28 object-cover rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform"
-                    onClick={() => setOpenCert(cert)}
-                  />
-                ))}
+                  <p
+                    className="text-primary mb-6 font-medium"
+                    style={{ lineHeight: "34px" }}
+                  >
+                    {isRTL ? doctor.description_ar : doctor.description_en}
+                  </p>
+                </div>
               </div>
+
+              {/* Certificates */}
+              {doctor.certificates && doctor.certificates.length > 0 && (
+                <div className="mt-8">
+                  <h3 className="text-primary font-bold mb-4">
+                    {t("doctor_certificates_title")}
+                  </h3>
+
+                  <div className="flex flex-wrap gap-4">
+                    {doctor.certificates.map((cert, index) => (
+                      <img
+                        key={index}
+                        src={cert.image}
+                        alt="Certificate"
+                        className="w-40 h-28 object-cover rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform"
+                        onClick={() => setOpenCert(cert)}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
-          )}
-        </div>
-      </section>
+          </section>
+        )
+      }
+      
 
       {/* Overlay */}
       {openCert && (

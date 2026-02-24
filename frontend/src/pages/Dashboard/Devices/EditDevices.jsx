@@ -8,7 +8,7 @@ const EditDevices = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { t } = useTranslation();
-
+  const [existingImages, setExistingImages] = useState([]);
   const [formData, setFormData] = useState({
     name_ar: "",
     name_en: "",
@@ -50,9 +50,9 @@ const EditDevices = () => {
         });
 
         setPreviewImage(device.image ? `${process.env.REACT_APP_API_URL}/storage/${device.image}` : null);
+        setExistingImages(device.images || []);
       } catch (err) {
         console.log(err);
-        setMessage("فشل في جلب بيانات الجهاز");
       } finally {
         setLoading(false);
       }
@@ -227,13 +227,26 @@ const EditDevices = () => {
             className="w-full"
           />
         </div>
+        {existingImages.length > 0 && (
+  <div className="flex flex-wrap gap-4 mt-4">
+    {existingImages.map((img, index) => (
+      <img
+        key={index}
+        src={img}
+        alt="Device"
+        className="w-24 h-24 object-cover rounded border"
+      />
+    ))}
+  </div>
+)}
+
 
         <button
           type="submit"
           disabled={submitLoading}
-          className="bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark transition"
+          className="bg-primary text-text px-4 py-2 rounded hover:bg-primary-dark transition"
         >
-          {submitLoading ? t("loading") : t("update_device")}
+          {submitLoading ? t("جاري التعديل ...") : t("edit_device")}
         </button>
       </form>
     </div>

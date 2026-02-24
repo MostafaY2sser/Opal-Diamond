@@ -29,7 +29,7 @@ const DevicesList = () => {
   }, [location.state?.updated]);
 
   const handleDelete = async (id) => {
-    const confirmDelete = confirm(t("Are you sure?"));
+    const confirmDelete = confirm(t("Are you sure , you want to delete this device?"));
     if (!confirmDelete) return;
     await deleteDevice(id);
     fetchDevices();

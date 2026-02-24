@@ -33,6 +33,16 @@ const AddDoctor = () => {
     }
   };
 
+  const removeCertificate = (indexToRemove) => {
+    setFormData((prev) => ({
+      ...prev,
+      certificates: prev.certificates.filter(
+        (_, index) => index !== indexToRemove
+      ),
+    }));
+  };
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -162,7 +172,7 @@ const AddDoctor = () => {
         {/*  Description AR */}
         <div>
           <label htmlFor="description_ar" className="block text-primary mb-1">
-           {t('escription_ar')}
+           {t('description_ar')}
           </label>
           <textarea
             id="description_ar"
@@ -239,13 +249,26 @@ const AddDoctor = () => {
           {formData.certificates.length > 0 && (
             <div className="mt-3 flex flex-wrap gap-3">
               {formData.certificates.map((file, index) => (
-                <div key={index} className="flex flex-col items-center">
+                <div key={index} className="relative">
+                  
+                  {/* زرار الحذف */}
+                  <button
+                    type="button"
+                    onClick={() => removeCertificate(index)}
+                    className="absolute -top-2 -right-2 bg-red-600 text-white w-6 h-6 flex items-center justify-center rounded-full text-sm hover:bg-red-700 shadow-md"
+                  >
+                    ×
+                  </button>
+
                   <img
                     src={URL.createObjectURL(file)}
                     alt={`Certificate ${index + 1}`}
                     className="w-24 h-24 object-cover rounded-md border border-gray-300"
                   />
-                  <p className="text-sm text-gray-600 mt-1">{t('certificate')} {index + 1}</p>
+
+                  <p className="text-sm text-gray-600 mt-1 text-center">
+                    {t('certificate')} {index + 1}
+                  </p>
                 </div>
               ))}
             </div>

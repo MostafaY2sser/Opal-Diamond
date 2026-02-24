@@ -3,7 +3,9 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 const DeviceCard = ({ device, delay = 0 }) => {
-  const { t } = useTranslation();
+
+  const { i18n, t } = useTranslation();
+  const isRTL = i18n.language === "ar";
 
   return (
     <div
@@ -15,7 +17,7 @@ const DeviceCard = ({ device, delay = 0 }) => {
       <div className="relative w-full h-72 overflow-hidden">
         <img
           src={device.image}
-          alt={t(device.nameKey)}
+          alt={t(device.name_ar)}
           className="w-full h-full object-contain hover:scale-110 transition duration-500"
         />
       </div>
@@ -23,10 +25,10 @@ const DeviceCard = ({ device, delay = 0 }) => {
       {/* Content */}
       <div className="p-2 md:p-6 text-center">
         <h3 className="text-base sm:text-lg font-semibold text-primary mb-2">
-          {t(device.nameKey)}
+          { isRTL ? device.name_ar : device.name_en}
         </h3>
         <p className="text-primary text-base mb-6">
-          {t(device.descriptionKey)}
+          { isRTL ? device.description_ar : device.description_en}
         </p>
 
         <a

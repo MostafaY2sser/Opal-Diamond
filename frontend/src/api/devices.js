@@ -3,6 +3,11 @@ import axios from "./axios";
 // Get All Devices
 export const getDevices = () => axios.get("/equipment");
 
+// Get Single Device
+export const getDeviceById = (id) =>
+  axios.get(`/equipment/${id}`);
+
+
 // Add Devices
 export const addDevice = (data) => axios.post("/admin/equipment", data);
 

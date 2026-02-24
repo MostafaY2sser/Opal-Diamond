@@ -1,12 +1,17 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MainHero from "../../components/common/MainHero";
 import DoctorCard from "../../components/landing/DoctorCard";
-import { doctors } from "../../data/doctors";
 import { useTranslation } from "react-i18next";
+import { getDoctors } from "../../api/doctors.api";
+import Loader from "../../components/common/Loader";
+import useDoctors from "../../hooks/doctors/useDoctors";
 
 export const Doctors = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === "ar";
+  const { doctors, loading } = useDoctors();
+
 
   return (
     <div>
@@ -21,11 +26,24 @@ export const Doctors = () => {
       {/* ===== Doctors Grid ===== */}
       <section className="py-20 bg-white" id="doctors">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {doctors.map((doctor, index) => (
-              <DoctorCard key={doctor.id} doctor={doctor} delay={index * 100} />
-            ))}
-          </div>
+
+          {loading ? (
+            <div className="">
+              <Loader />
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {doctors.map((doctor, index) => (
+                <DoctorCard
+                  key={doctor.id}
+                  doctor={doctor}
+                  delay={index * 100}
+                  isRTL={isRTL}
+                />
+              ))}
+            </div>
+          )}
+
         </div>
       </section>
     </div>

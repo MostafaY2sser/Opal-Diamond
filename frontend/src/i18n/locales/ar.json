@@ -23,7 +23,7 @@
   "doctor_image": "صورة الطبيب",
   "preview_image": "معاينة الصورة:",
   "certificates_label": "الشهادات (يمكن رفع أكثر من شهادة)",
-  "certificate": "شهادة",
+  "certificate": "الشهادات",
   "adding": "جاري الإضافة...",
   "add_doctor": "إضافة طبيب",
   "add_failed": "فشل في إضافة الطبيب. تحقق من الصور والمحاولة مرة أخرى.",
@@ -171,7 +171,13 @@
   "device_bio_title": "نبذة عن الجهاز",
   "device_images_title": "صور الجهاز",
   "device_not_found": "الجهاز غير موجود",
-
+  "add_device":"إضافة جهاز",
+  "edit_device":"تعديل الجهاز",
+  "features_ar":"المميزات بالعربي",
+  "features_en":"المميزات بالانجليزي",
+  "main_image":"صورة  الجهاز",
+  "additional_images":"صور إضافية",
+  "comma_separated":"مفصولة بفواصل",
 
 
 
@@ -259,7 +265,7 @@
   "contact_title_suffix": "أو اسألنا",
   "contact_description": "لأي استفسار أو حجز موعد، استخدم النموذج أدناه أو بيانات الاتصال الخاصة بالمجمع.",
   "contact_location": "الموقع",
-  "contact_location_address": "المنطقة الشرقية - الدمام - سيهات - حي المنتزه - شارع إبراهيم الشاطبي - مجمع JFC الدور الرابع",
+  "contact_location_address": "المنطقة الشرقية - الدمام - سيهات - حي المنتزه - شارع إبراهيم الشاطبي - مجمع JFC التجاري الدور الرابع",
   "contact_phone": "الهاتف",
   "contact_email": "البريد الإلكتروني",
   "contact_form_name": "اسمك",
@@ -357,6 +363,9 @@
   "contact_intro_title": "نحن هنا لخدمتك دائمًا",
   "contact_intro_description": "فريقنا الطبي مستعد للإجابة على جميع استفساراتك وتقديم أفضل رعاية صحية. لا تتردد في التواصل معنا أو حجز موعدك الآن.",
   "contact_button_text": "تواصل الآن",
+  "message_sent_successfully":"تم إرسال الرسالة بنجاح",
+  "error_sending_message":"حدث خطأ في إرسال الرسائل",
+  "sending":"جاري الارسال...",
 
 
 
@@ -372,7 +381,10 @@
   "contact_location_link": "https://share.google/wgXwzqDvhuFcmS1To",
   "quick_links": "روابط سريعة",
   "about_us": "من نحن",
-  "footer_rights": "المجمع الطبي. جميع الحقوق محفوظة."
+  "footer_rights": "المجمع الطبي. جميع الحقوق محفوظة.",
+
+
+  "dashboard_welcome": "مرحبًا بك في لوحة التحكم"
 
   
 }

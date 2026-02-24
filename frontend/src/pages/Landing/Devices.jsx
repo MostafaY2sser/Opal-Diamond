@@ -1,48 +1,16 @@
-// import React from "react";
-// import MainHero from "../../components/common/MainHero";
-// import DeviceCard from "../../components/landing/DeviceCard";
-// import { devices } from "../../data/devices";
-
-
-// const Devices = () => {
-//   return (
-//     <div>
-//       {/* Hero Section */}
-//       <MainHero
-//         title="الأجهزة الطبية"
-//         subtitle="معدات حديثة"
-//         description="نستخدم أحدث الأجهزة الطبية لضمان تشخيص وعلاج دقيق لكل مريض."
-//         bgImage="/main_bg_hero.jpg"
-//       />
-
-//       {/* Grid للأجهزة */}
-//       <section className="py-20 bg-white">
-//         <div className="max-w-7xl mx-auto px-4">
-//           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-//             {devices.map((device, index) => (
-//               <DeviceCard key={device.id} device={device} delay={index * 100} />
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// };
-
-// export default Devices;
-
-
-
-
 
 import React from "react";
 import MainHero from "../../components/common/MainHero";
 import DeviceCard from "../../components/landing/DeviceCard";
-import { devices } from "../../data/devices";
 import { useTranslation } from "react-i18next";
+import useDevices from "../../hooks/devices/useDevices";
+import Loader from "../../components/common/Loader";
 
 const Devices = () => {
-  const { t } = useTranslation();
+
+  const { i18n, t } = useTranslation();
+  const isRTL = i18n.language === "ar";
+  const { devices, loading } = useDevices();
 
   return (
     <div>
@@ -54,16 +22,25 @@ const Devices = () => {
         bgImage="/main_bg_hero.jpg"
       />
 
-      {/* Grid للأجهزة */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {devices.map((device, index) => (
-              <DeviceCard key={device.id} device={device} delay={index * 100} />
-            ))}
-          </div>
-        </div>
-      </section>
+      {loading
+        ? (
+          <div className="py-10"><Loader/></div>
+        )
+        :(
+          <section className="py-20 bg-white">
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {devices.map((device, index) => (
+                  <DeviceCard key={device.id} device={device} delay={index * 100} />
+                ))}
+              </div>
+            </div>
+          </section>
+        )
+      }
+      
+
+
     </div>
   );
 };

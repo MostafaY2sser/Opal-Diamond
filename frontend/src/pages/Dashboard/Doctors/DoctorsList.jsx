@@ -1,39 +1,22 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { deleteDoctor, getDoctors } from "../../../api/doctors.api";
 import Loader from "../../../components/common/Loader";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import useDoctors from "../../../hooks/doctors/useDoctors";
 
 const DoctorsList = () => {
-  const [doctors, setDoctors] = useState([]);
-  const [loading, setLoading] = useState(true);
+
+  const { doctors, loading, deleteDoctorById } = useDoctors();
   const { i18n, t } = useTranslation();
   const isRTL = i18n.language === "ar"; 
   const navigate = useNavigate();
   const location = useLocation();
 
-
-  const fetchDoctors = async () => {
-    try {
-      const res = await getDoctors();
-      setDoctors(res.data);
-    } catch (err) {
-      console.log(err);
-      alert("Error loading doctors");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchDoctors();
-  }, [location.state?.updated]);
-
   const handleDelete = async (id) => {
-    const confirmDelete = confirm(t("Are you sure?"));
+    const confirmDelete = confirm(t("Are you sure , you want to delete this doctor?"));
     if (!confirmDelete) return;
-    await deleteDoctor(id);
-    fetchDoctors();
+
+    await deleteDoctorById(id);
   };
 
   if (loading) return <div className="mt-40"><Loader/> </div>;

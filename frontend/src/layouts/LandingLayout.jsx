@@ -22,7 +22,7 @@ export default function LandingLayout() {
 
       <Footer />
       <a
-        href="#"
+        href="https://wa.me/966536322322"
         target="_blank"
         rel="noopener noreferrer"
         className={`fixed 
@@ -31,7 +31,7 @@ export default function LandingLayout() {
               text-5xl bg-green-600 hover:scale-110 transition p-2 md:p-3 rounded-full shadow-md`
             }
       >
-        <FaWhatsapp className="w-8 sm:w-10 h-8 md:h-10 text-white" />
+        <FaWhatsapp className="w-6 sm:w-8 h-6 md:h-8  text-white" />
       </a>
     </div>
   );

@@ -384,7 +384,9 @@
   "footer_rights": "المجمع الطبي. جميع الحقوق محفوظة.",
 
 
-  "dashboard_welcome": "مرحبًا بك في لوحة التحكم"
+  "dashboard_welcome": "مرحبًا بك في لوحة التحكم",
+  "doctors_not_found":"لا يوجد أطباء لعرضهم",
+  "devices_not_found":"لا يوجد أجهزة لعرضها"
 
   
 }

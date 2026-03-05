@@ -32,7 +32,12 @@ export const Doctors = () => {
               <Loader />
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            doctors.length === 0 
+              ? (
+                <p className="text-center py-20 text-primary text-3xl w-full">{t("doctors_not_found")}</p>
+              )
+              :(
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {doctors.map((doctor, index) => (
                 <DoctorCard
                   key={doctor.id}
@@ -42,6 +47,7 @@ export const Doctors = () => {
                 />
               ))}
             </div>
+              )
           )}
 
         </div>

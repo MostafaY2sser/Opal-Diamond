@@ -26,16 +26,21 @@ const Devices = () => {
         ? (
           <div className="py-10"><Loader/></div>
         )
-        :(
-          <section className="py-20 bg-white">
-            <div className="max-w-7xl mx-auto px-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {devices.map((device, index) => (
-                  <DeviceCard key={device.id} device={device} delay={index * 100} />
-                ))}
+        :( devices.length === 0
+          ?(
+            <p className="text-center py-20 text-primary text-3xl w-full">{t("devices_not_found")}</p>
+          )
+          :(
+            <section className="py-20 bg-white">
+              <div className="max-w-7xl mx-auto px-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {devices.map((device, index) => (
+                    <DeviceCard key={device.id} device={device} delay={index * 100} />
+                  ))}
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+          )
         )
       }
       

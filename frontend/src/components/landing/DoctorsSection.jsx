@@ -11,13 +11,6 @@ const DoctorsSection = () => {
   const isRTL = i18n.language === "ar";
  const { doctors, loading } = useDoctors();
 
-  if (loading) {
-    return (
-      <div className="mt-20">
-        <Loader />
-      </div>
-    );
-  }
 
   return (
     <section className="py-10 md:py-20 bg-white" id="doctors">
@@ -38,15 +31,29 @@ const DoctorsSection = () => {
         </div>
 
         {/* Doctors Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {doctors.map((doctor) => (
-            <DoctorCard
-              key={doctor.id}
-              doctor={doctor}
-              isRTL={isRTL}
-            />
-          ))}
-        </div>
+        { loading 
+          ?(
+            <div className=""><Loader /></div>
+          )
+          :( doctors.length === 0
+            ?(
+              <p className="text-center py-20 text-primary text-3xl w-full">{t("doctors_not_found")}</p>
+            )
+            :(
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {doctors.map((doctor) => (
+                  <DoctorCard
+                    key={doctor.id}
+                    doctor={doctor}
+                    isRTL={isRTL}
+                  />
+                ))}
+              </div>
+            )
+
+          )
+        }
+        
 
       </div>
     </section>

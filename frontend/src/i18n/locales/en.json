@@ -400,7 +400,9 @@
   "footer_rights": "Opal Diamond Clinic. All rights reserved.",
 
 
-  "dashboard_welcome": "Welcome to the Dashboard"
+  "dashboard_welcome": "Welcome to the Dashboard",
+  "doctors_not_found":"No doctors to display",
+  "devices_not_found":"No devices to display"
 
 
 }

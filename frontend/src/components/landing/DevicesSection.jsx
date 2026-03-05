@@ -37,14 +37,21 @@ const DevicesSection = () => {
                   <Loader/>
               </div>
             )
-            : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                {
-                  devices.map((device, index) => (
-                    <DeviceCard key={device.id} device={device} delay={index * 100} />
-                  ))
-                }
-            </div>
+            : ( 
+              devices.length === 0
+              ? (
+                <p className="text-center py-20 text-primary text-3xl w-full">{t("devices_not_found")}</p>
+              )
+              :(
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                    {
+                      devices.map((device, index) => (
+                        <DeviceCard key={device.id} device={device} delay={index * 100} />
+                      ))
+                    }
+                </div>
+              )
+              
             )
           }
 

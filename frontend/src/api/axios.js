@@ -1,13 +1,14 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:8000/api", 
+  // baseURL: "http://localhost:8000/api", 
+  baseURL: "https://api.opaldiamondclinic.com/api", 
   // headers: {
   //   "Content-Type": "application/json",
   // },
 });
 
-// إضافة التوكن تلقائياً
+
 instance.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
 

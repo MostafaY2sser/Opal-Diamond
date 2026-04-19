@@ -18,6 +18,7 @@ const DeviceCard = ({ device, delay = 0 }) => {
         <img
           src={device.image}
           alt={t(device.name_ar)}
+          loading="lazy"
           className="w-full h-full object-contain hover:scale-110 transition duration-500"
         />
       </div>

@@ -1,7 +1,7 @@
 
 import { useTranslation } from "react-i18next";
-import useDoctors from "../../hooks/doctors/useDoctors";
-import useDevices from "../../hooks/devices/useDevices";
+import {useDoctors} from "../../hooks/doctors/useDoctors";
+import {useDevices} from "../../hooks/devices/useDevices";
 import Loader from "../../components/common/Loader";
 
 const Dashboard = () => {

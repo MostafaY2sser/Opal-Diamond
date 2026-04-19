@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { NavLink  } from "react-router-dom";
+import { Link, NavLink  } from "react-router-dom";
 import { FaBars, FaFacebookF, FaInstagram, FaLinkedinIn, FaSnapchat, FaTiktok, FaTimes, FaTwitter } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import { FiLogIn } from "react-icons/fi";
 
 
 const Navbar = () => {
@@ -9,6 +10,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const { i18n, t } = useTranslation();
   const isRTL = i18n.language === "ar";
+  const isLogin = localStorage.getItem("token")
 
 
   const menuLinks = [
@@ -45,11 +47,11 @@ const Navbar = () => {
 
   return (
     <header
-        className={`p-2 sm:p-4 sticky top-0 z-50 transition-colors duration-200 ${
+        className={`p-2  sticky top-0 z-50 transition-colors duration-200 ${
           scrolled
-            ? "bg-white shadow-md"
+            ? "bg-white shadow-md sm:p-2"
             // : "bg-primary/20 backdrop-blur-md"
-            : ""
+            : "sm:p-4"
         }`}
       >
 
@@ -87,11 +89,11 @@ const Navbar = () => {
           </ul>
           </div>
 
-        <div className="flex gap-5 items-center">
+        <div className="flex gap-3 items-center">
           
           {/* Toggle Lang */}
           <button
-            className={`text-text font-semibold sm:border-2 border-primary p-1 sm:p-2 rounded-xl  ${isRTL ? 'ml-10 md:ml-0' : 'mr-10 md:mr-0'  }`}
+            className={`text-text font-semibold sm:border-2 border-primary sm:p-2 rounded-xl  ${isRTL ? 'ml-10 md:ml-0' : 'mr-10 md:mr-0'} ${isLogin ? 'ml-0':''}`}
             onClick={() => {
               const newLang = i18n.language === "ar" ? "en" : "ar";
               i18n.changeLanguage(newLang);
@@ -102,7 +104,7 @@ const Navbar = () => {
           </button>
 
           {/* Social Media Links */}
-          <div className="hidden md:flex justify-center md:justify-start gap-4">
+          <div className="hidden md:flex justify-center md:justify-start gap-2">
             {socialLinks.map((link, index) => (
               <a
                 key={index}
@@ -115,6 +117,18 @@ const Navbar = () => {
               </a>
             ))}
           </div>
+
+          {/* Go To Dashboard */}
+          {isLogin && (
+            <Link
+                to={"/dashboard"}
+                title="الذهاب الي لوحة التحكم"
+                className={`flex items-center  p-3  rounded-full text-sm bg-primary ${isRTL ? 'ml-10 md:ml-0' : 'mr-10 md:mr-0'  } `}
+            >
+                <FiLogIn className="text-lg text-white" />
+            </Link>
+          )}
+
         </div>
 
         {/* Mobile Menu Button */}

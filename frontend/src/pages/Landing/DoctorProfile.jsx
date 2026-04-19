@@ -13,9 +13,13 @@ const DoctorProfile = () => {
   const isRTL = i18n.language === "ar";
   const { id } = useParams();
   const [openCert, setOpenCert] = useState(null);
-  const { doctor, loading } = useDoctor(id);
+  // const { doctor, loading } = useDoctor(id);
+  const { data: doctor, isLoading: loading, error } = useDoctor(id);
 
 
+  if (error) {
+    return <div className="text-center py-10 text-red-500">حدث خطأ</div>;
+  }
 
   return (
     <div>
@@ -36,6 +40,7 @@ const DoctorProfile = () => {
                 <img
                   src={doctor.image}
                   alt={isRTL ? doctor.name_ar : doctor.name_en}
+                  loading="lazy"
                   className="w-full md:w-1/2 h-96 rounded-2xl object-cover shadow-lg"
                 />
 
@@ -75,6 +80,7 @@ const DoctorProfile = () => {
                         key={index}
                         src={cert.image}
                         alt="Certificate"
+                        loading="lazy"
                         className="w-40 h-28 object-cover rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform"
                         onClick={() => setOpenCert(cert)}
                       />
@@ -97,6 +103,7 @@ const DoctorProfile = () => {
           <img
             src={openCert}
             alt="Certificate"
+            loading="lazy"
             className="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl"
           />
         </div>

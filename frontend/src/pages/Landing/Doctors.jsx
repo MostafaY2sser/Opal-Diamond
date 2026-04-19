@@ -5,7 +5,7 @@ import DoctorCard from "../../components/landing/DoctorCard";
 import { useTranslation } from "react-i18next";
 import { getDoctors } from "../../api/doctors.api";
 import Loader from "../../components/common/Loader";
-import useDoctors from "../../hooks/doctors/useDoctors";
+import {useDoctors} from "../../hooks/doctors/useDoctors";
 
 export const Doctors = () => {
   const { t, i18n } = useTranslation();

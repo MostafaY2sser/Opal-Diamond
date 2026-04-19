@@ -4,6 +4,9 @@ import './App.css'
 import useAOS from './hooks/useAOS';
 import AppRouter from './routes/AppRouter';
 import { useEffect, useState } from 'react';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
   const { i18n } = useTranslation();
@@ -25,9 +28,11 @@ function App() {
 
 
   return (
-    <div dir={isRTL ? "rtl" : "ltr"}>
-      <AppRouter />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div dir={isRTL ? "rtl" : "ltr"}>
+        <AppRouter />
+      </div>
+    </QueryClientProvider>
   )
 }
 

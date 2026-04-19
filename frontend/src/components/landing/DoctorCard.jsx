@@ -14,6 +14,7 @@ const DoctorCard = ({ doctor, isRTL }) => {
         <img
           src={doctor.image}
           alt={isRTL ? doctor.name_ar : doctor.name_en}
+          loading="lazy"
           className="w-full h-full object-cover hover:scale-110 transition duration-500"
         />
       </div>

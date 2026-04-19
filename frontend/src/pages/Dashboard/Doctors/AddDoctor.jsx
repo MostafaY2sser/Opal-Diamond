@@ -222,6 +222,7 @@ const AddDoctor = () => {
               <img
                 src={URL.createObjectURL(formData.image)}
                 alt="Doctor Preview"
+                loading="lazy"
                 className="w-32 h-32 object-cover rounded-md border border-gray-300"
               />
             </div>
@@ -263,6 +264,7 @@ const AddDoctor = () => {
                   <img
                     src={URL.createObjectURL(file)}
                     alt={`Certificate ${index + 1}`}
+                    loading="lazy"
                     className="w-24 h-24 object-cover rounded-md border border-gray-300"
                   />
 

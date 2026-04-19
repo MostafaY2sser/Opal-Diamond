@@ -11,12 +11,9 @@ const DeviceInfo = () => {
   const { i18n, t } = useTranslation();
   const isRTL = i18n.language === "ar";
   const { id } = useParams();
-  const { device, loading } = useDevice(id);
+  const { data: device, isLoading: loading, error } = useDevice(id);
   const [lightboxImage, setLightboxImage] = useState(null);
 
-  // if (!device) return <p className="text-center py-20">{t("device_not_found")}</p>;
-
- 
 
 
   return (
@@ -38,6 +35,7 @@ const DeviceInfo = () => {
               <img
                 src={device.image}
                 alt={isRTL ? device.name_ar : device.name_en}
+                loading="lazy"
                 className="w-full md:w-[65%] h-[500px] rounded-2xl object-contain shadow-lg"
               />
 
@@ -75,6 +73,7 @@ const DeviceInfo = () => {
                         key={index}
                         src={img}
                         alt={`${isRTL ? device.name_ar : device.name_en} ${index + 1}`}
+                        loading="lazy"
                         className="w-full h-48 object-cover rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform duration-300"
                         onClick={() => setLightboxImage(img)}
                       />
@@ -99,6 +98,7 @@ const DeviceInfo = () => {
           <img
             src={lightboxImage}
             alt="Device Full"
+            loading="lazy"
             className="max-h-[90%] max-w-[90%] rounded-lg shadow-lg"
           />
         </div>

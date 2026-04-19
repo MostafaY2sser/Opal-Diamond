@@ -6,7 +6,7 @@ import useDoctor from "../../../hooks/doctors/useDoctor";
 
 const DoctorDetails = () => {
   const { id } = useParams();
-  const { doctor, loading, error } = useDoctor(id);
+  const { data: doctor, isLoading: loading, error } = useDoctor(id);
   const { i18n } = useTranslation();
   const isRTL = i18n.language === "ar";
 
@@ -38,6 +38,7 @@ const DoctorDetails = () => {
             <img
               src={doctor.image}
               alt={doctor.name_ar}
+              loading="lazy"
               className="w-64 sm:w-96 h-64 sm:h-72 object-cover rounded shadow-lg"
             />
           </div>
@@ -55,6 +56,7 @@ const DoctorDetails = () => {
                 key={cert.id}
                 src={cert.image}
                 alt="شهادة الطبيب"
+                loading="lazy"
                 className="w-32 h-32 object-cover rounded border"
               />
             ))}

@@ -29,7 +29,7 @@ const HeroSection = () => {
       <div className="container relative max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:px-8 py-20 sm:py-10 lg:py-0">
 
         {/* ========= Left Side ========= */}
-        <div data-aos="fade-right" className="mx-auto text-center sm:text-start">
+        <div data-aos="fade-left" className="mx-auto text-center sm:text-start">
 
           <span className="inline-block mb-4 px-3 py-1 sm:py-2 text-sm sm:text-base text-text bg-primary/40 rounded-full">
             {t('center_tagline')}
@@ -55,7 +55,7 @@ const HeroSection = () => {
 
         {/* ========= Right Side (Info Card) ========= */}
         <div
-          data-aos="fade-left"
+          data-aos="fade-right"
           className="bg-white/20 backdrop-blur-2xl rounded-3xl shadow-xl p-8 sm:p-10 md:p-12 border border-white/30 max-w-xl"
         >
           <h3 className="text-xl sm:text-2xl font-bold text-primary mb-6 sm:mb-8">

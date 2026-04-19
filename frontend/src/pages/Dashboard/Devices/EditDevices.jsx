@@ -205,7 +205,7 @@ const EditDevices = () => {
         <div>
           <label className="block mb-1 font-semibold">{t("main_image")}</label>
           {previewImage && (
-            <img src={previewImage} alt="preview" className="mb-2 w-40 h-40 object-cover rounded" />
+            <img src={previewImage} alt="preview" className="mb-2 w-40 h-40 object-cover rounded"  loading="lazy"/>
           )}
           <input
             type="file"
@@ -234,6 +234,7 @@ const EditDevices = () => {
         key={index}
         src={img}
         alt="Device"
+        loading="lazy"
         className="w-24 h-24 object-cover rounded border"
       />
     ))}

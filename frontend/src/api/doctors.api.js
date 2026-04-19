@@ -1,5 +1,6 @@
 import axios from "./axios";
 
+
 export const getDoctors = () => axios.get("/doctors");
 
 export const addDoctor = (data) => axios.post("/admin/doctors", data);

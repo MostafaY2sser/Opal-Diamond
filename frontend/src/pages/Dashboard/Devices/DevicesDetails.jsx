@@ -68,6 +68,7 @@ export const DevicesDetails = () => {
             <img
               src={device.image}
               alt={isRTL ? device.name_ar : device.name_en}
+              loading="lazy"
               className="w-full h-64 sm:h-72 object-cover rounded shadow-lg"
             />
           </div>
@@ -84,6 +85,7 @@ export const DevicesDetails = () => {
                 key={idx}
                 src={img}
                 alt={`صورة ${idx + 1}`}
+                loading="lazy"
                 className="w-32 h-32 object-cover rounded border"
               />
             ))}

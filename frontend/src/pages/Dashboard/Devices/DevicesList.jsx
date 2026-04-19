@@ -62,6 +62,7 @@ const DevicesList = () => {
               <img
                 src={device.image}
                 alt={isRTL ? device.name_ar : device.name_en}
+                loading="lazy"
                 className="w-full h-56 object-cover"
               />
             </div>

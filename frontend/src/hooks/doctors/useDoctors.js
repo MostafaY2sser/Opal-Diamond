@@ -1,41 +1,34 @@
 
-import { useEffect, useState, useCallback } from "react";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { getDoctors, deleteDoctor } from "../../api/doctors.api";
 
-const useDoctors = () => {
-  const [doctors, setDoctors] = useState([]);
-  const [loading, setLoading] = useState(true);
+export const useDoctors = () => {
+  const queryClient = useQueryClient();
 
-  const fetchDoctors = useCallback(async () => {
-    try {
+  // GET doctors
+  const doctorsQuery = useQuery({
+    queryKey: ["doctors"],
+    queryFn: async () => {
       const res = await getDoctors();
-      setDoctors(res.data);
-    } catch (err) {
-      console.log("Error fetching doctors:", err);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
+      return res.data;
+    },
+    staleTime: 1000 * 60 * 5,
+    refetchOnWindowFocus: false,
+  });
 
-  const deleteDoctorById = async (id) => {
-    try {
-      await deleteDoctor(id);
-      fetchDoctors(); 
-    } catch (err) {
-      console.log("Error deleting doctor:", err);
-    }
-  };
-
-  useEffect(() => {
-    fetchDoctors();
-  }, [fetchDoctors]);
+  // DELETE doctor
+  const deleteDoctorMutation = useMutation({
+    mutationFn: deleteDoctor,
+    onSuccess: () => {
+      queryClient.invalidateQueries(["doctors"]);
+    },
+  });
 
   return {
-    doctors,
-    loading,
-    refetch: fetchDoctors,
-    deleteDoctorById,
+    doctors: doctorsQuery.data || [],
+    loading: doctorsQuery.isLoading,
+    error: doctorsQuery.error,
+    deleteDoctorById: deleteDoctorMutation.mutate,
+    refetch: doctorsQuery.refetch,
   };
 };
-
-export default useDoctors;

@@ -59,6 +59,7 @@ const AboutUs = () => {
             alt="Laser, Dermatology & Aesthetic Center"
             className="rounded-xl shadow-lg object-cover w-full h-[300px] md:h-[420px]"
             data-aos="fade-right"
+            loading="lazy"
           />
         </div>
 

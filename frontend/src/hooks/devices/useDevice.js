@@ -1,27 +1,16 @@
-import { useState, useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { getDeviceById } from "../../api/devices";
 
 const useDevice = (id) => {
-  const [device, setDevice] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const fetchDevice = async () => {
-    try {
+  return useQuery({
+    queryKey: ["device", id],
+    queryFn: async () => {
       const res = await getDeviceById(id);
-      setDevice(res.data);
-    } catch (err) {
-      setError(err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    if (id) fetchDevice();
-  }, [id]);
-
-  return { device, loading, error };
+      return res.data;
+    },
+    enabled: !!id,
+    staleTime: 1000 * 60 * 5,
+  });
 };
 
 export default useDevice;

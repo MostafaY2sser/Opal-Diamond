@@ -1,27 +1,19 @@
-import { useEffect, useState } from "react";
+
+import { useQuery } from "@tanstack/react-query";
 import { getDoctorById } from "../../api/doctors.api";
 
 const useDoctor = (id) => {
-  const [doctor, setDoctor] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const fetchDoctor = async () => {
-    try {
+  
+  return useQuery({
+    queryKey: ["doctor", id],
+    queryFn: async () => {
       const res = await getDoctorById(id);
-      setDoctor(res.data);
-    } catch (err) {
-      setError(err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    if (id) fetchDoctor();
-  }, [id]);
-
-  return { doctor, loading, error };
+      return res.data;
+    },
+    enabled: !!id,
+    staleTime: 1000 * 60 * 5,
+  });
 };
+
 
 export default useDoctor;

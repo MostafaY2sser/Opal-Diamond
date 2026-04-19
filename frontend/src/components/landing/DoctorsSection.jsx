@@ -4,12 +4,13 @@ import { useTranslation } from "react-i18next";
 import DoctorCard from "./DoctorCard";
 import { getDoctors } from "../../api/doctors.api";
 import Loader from "../../components/common/Loader";
-import useDoctors from "../../hooks/doctors/useDoctors";
+import {useDoctors} from "../../hooks/doctors/useDoctors";
 
 const DoctorsSection = () => {
   const { i18n, t } = useTranslation();
   const isRTL = i18n.language === "ar";
  const { doctors, loading } = useDoctors();
+ 
 
 
   return (

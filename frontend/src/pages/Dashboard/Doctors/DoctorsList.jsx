@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Loader from "../../../components/common/Loader";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import useDoctors from "../../../hooks/doctors/useDoctors";
+import {useDoctors} from "../../../hooks/doctors/useDoctors";
 
 const DoctorsList = () => {
 
@@ -46,6 +46,7 @@ const DoctorsList = () => {
                 <img
                   src={doctor.image}
                   alt={isRTL ? doctor.name_ar : doctor.name_en}
+                  loading="lazy"
                   className="w-full h-56 object-cover"
                 />
               </div>

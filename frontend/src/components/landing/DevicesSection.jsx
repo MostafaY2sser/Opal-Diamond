@@ -2,7 +2,7 @@
 import { useTranslation } from "react-i18next";
 import DeviceCard from "../../components/landing/DeviceCard";
 // import { devices } from "../../data/devices";
-import useDevices from "../../hooks/devices/useDevices";
+import {useDevices} from "../../hooks/devices/useDevices";
 import Loader from "../../components/common/Loader";
 
 
